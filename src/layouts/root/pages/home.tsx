@@ -1,5 +1,7 @@
 import { ReactComponent as Crest } from '../../../assets/13-crest.svg';
 import { ReactComponent as StarburstGold } from '../../../assets/00-starburst-gold-on-center-no-bounding-box.svg';
+import { ReactComponent as MuseumOfInformationExplosionText } from '../../../assets/25-museum-of-information-explosion-text.svg';
+import { ReactComponent as MieLogo } from '../../../assets/14-mie-logo.svg';
 import { useScroll } from 'framer-motion';
 import { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
@@ -52,10 +54,14 @@ export const Home: React.FC<any> = (_props) => {
       </div>
       <div>
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>Hello</div>
-        <div ref={parentRef} style={{ minHeight: '400px', maxHeight:'600px', backgroundColor: 'yellow', padding: '10px', color: 'white', overflow:'hidden' }}>
-          <div ref={ref} style={{ maxWidth: `${width}px`, margin: '0 auto', position:'relative' }}>
-            <Crest style={{zIndex:2,position:'relative',opacity:`${vvalue==0?0:100}`}} />
-            <StarburstGold style={{position:'absolute', opacity:`${vvalue}`,transform:`translateX(-${backgroundLeftOffset}px)`, margin:'0 auto', top:`-${topOffset}px`, zIndex:1, minWidth:`${parentWidth}px`}} />
+        <div ref={parentRef} style={{ minHeight: '400px', maxHeight:'800px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow:'hidden' }}>
+          <div ref={ref}  style={{maxWidth: `${width}px`, margin: '0 auto', position:'relative' }}>
+              <MuseumOfInformationExplosionText style={{position:'absolute', stroke:'white', }} />
+              <MieLogo style={{position:'absolute' }} />
+              <Crest style={{position:'static', zIndex:2, strokeOpacity:0,opacity:`${vvalue===0?0:100},` }} />
+              <StarburstGold style={{position:'absolute', strokeOpacity:0, opacity:`${vvalue}`,transform:`translateX(-${backgroundLeftOffset}px)`, margin:'0 auto', top:`-${topOffset}px`, zIndex:0, minWidth:`${parentWidth}px`}} />
+
+
 
           </div>
 
