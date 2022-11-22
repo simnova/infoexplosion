@@ -53,7 +53,7 @@ import { useResizeDetector } from 'react-resize-detector';
 
 export const Home: React.FC<any> = (_props) => {
   const ref = useRef(null);
-  const parentRef = useRef(null);
+  //const parentRef = useRef(null);
 
   const aboutRef = useRef(null);
   const attractionsRef = useRef(null);
@@ -61,14 +61,24 @@ export const Home: React.FC<any> = (_props) => {
   const newsAndEventsRef = useRef(null);
   const supportTheMuseumRef = useRef(null);
 
+  const detectorOptions: any = {
+    refreshMode: 'debounce',
+    refreshRate: 300,
+    refreshOptions: { trailing: true },
+  }
 
-  const { width:parentWidth, height:parentHeight } = useResizeDetector({ targetRef: parentRef });
+  const { width:parentWidth, height:parentHeight, ref: parentRef } = useResizeDetector(detectorOptions);
   const { width:childWidth, height:childHeight } = useResizeDetector({ targetRef: ref });
 
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
   const [vvalue, setvvalue] = useState(100);
-  const maxWidth = parentWidth??(Math.min(vw * 0.8, 1000));
+  if(!parentRef || !parentRef.current){
+    console.log("parentRef is null");
+  }else{
+    console.log("parentRef:", parentRef.current.getBoundingClientRect().width);
+  };
+  const maxWidth = parentWidth??(Math.min(vw, 780));
   console.log('maxWidth', maxWidth);
   const [width, setWidth] = useState(maxWidth);
   //const [parentWidth, setParentWidth] = useState(0);
@@ -77,7 +87,7 @@ export const Home: React.FC<any> = (_props) => {
     target: ref,
     offset: ['end 100px', 'start 300px'],
   });
-  console.log(parentRef.current);
+  console.log('parentRef:', parentRef.current);
   const targetWidth = vw > 1000 ? 300: (300 * (vw/1000));
   useEffect(() => {
     const unsubProgress = scrollYProgress.onChange((v) => {
@@ -137,7 +147,20 @@ export const Home: React.FC<any> = (_props) => {
 
             
             <NavBar style={{position:'absolute'}} />
-            <Crest style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',maxWidth: `${targetWidth}px`,display: (vvalue === 0?'block':'none')}} />
+            <div  style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',minWidth: `${targetWidth}px`,minHeight:`${targetWidth}px`,display:(vvalue === 0?'block':'none')}}>
+              <MuseumOfInformationExplosionText style={{position:'absolute', marginTop:"50px",zIndex:3  }} />
+              
+              <MieLogo style={{position:'absolute', marginTop:"50px" ,zIndex:3}} />
+              <BarLeft style={{position:'absolute', marginTop:"50px",zIndex:3 }} />
+              <BarRight style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <RibbonBehindCrest style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <RightRibbonEnd style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <LeftRibbonEnd style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <RibbonFrontOfCrest style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <LightningBoltsTop style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <Crest style={{position:'absolute',zIndex:1}} />
+            </div>
+            
       </div>
       <div>
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display:'none' }}>Hello</div>
@@ -180,6 +203,7 @@ export const Home: React.FC<any> = (_props) => {
         <div ref={getInvolvedRef} style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>Get Involved</div>
         <div ref={newsAndEventsRef} style={{ height: '500px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>News & Events</div>
         <div ref={supportTheMuseumRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>Support the Museum</div>
+        <div style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>Footer</div>
       </div>
     </div>
   );
