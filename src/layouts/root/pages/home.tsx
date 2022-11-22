@@ -151,8 +151,6 @@ export const Home: React.FC<any> = (_props) => {
               <MuseumOfInformationExplosionText style={{position:'absolute', marginTop:"50px",zIndex:3  }} />
               
               <MieLogo style={{position:'absolute', marginTop:"50px" ,zIndex:3}} />
-              <BarLeft style={{position:'absolute', marginTop:"50px",zIndex:3 }} />
-              <BarRight style={{position:'absolute', marginTop:"50px",zIndex:3}} />
               <RibbonBehindCrest style={{position:'absolute', marginTop:"50px",zIndex:3}} />
               <RightRibbonEnd style={{position:'absolute', marginTop:"50px",zIndex:3}} />
               <LeftRibbonEnd style={{position:'absolute', marginTop:"50px",zIndex:3}} />
