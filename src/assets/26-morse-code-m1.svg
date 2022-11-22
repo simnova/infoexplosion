@@ -3,10 +3,10 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#4175DB;}
-	.st1{fill:none;}
+	.morsecodem10{fill:#4175DB;}
+	.morsecodem11{fill:none;}
 </style>
-<path id="m_00000007418889310184629720000011630203267022896288_" class="st0" d="M424.12,595.62c5.31,0,9.62-4.31,9.62-9.62
+<path id="m_00000007418889310184629720000011630203267022896288_" class="morsecodem10" d="M424.12,595.62c5.31,0,9.62-4.31,9.62-9.62
 	s-4.31-9.62-9.62-9.62h-38.49c-5.31,0-9.62,4.31-9.62,9.62s4.31,9.62,9.62,9.62H424.12"/>
-<rect id="page_bounding_box__x28_for_SVG_x29_" class="st1" width="1080" height="1080"/>
+<rect id="page_bounding_box__x28_for_SVG_x29_" class="morsecodem11" width="1080" height="1080"/>
 </svg>

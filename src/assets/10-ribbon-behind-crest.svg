@@ -3,18 +3,18 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:#4175DB;}
-	.st2{fill:none;}
+	.ribbonbehindcrest0{fill:#FFFFFF;}
+	.ribbonbehindcrest1{fill:#4175DB;}
+	.ribbonbehindcrest2{fill:none;}
 </style>
 <g id="Ribbon_outline__x28_behind_Hexagon_x29_">
-	<rect x="280.19" y="431" class="st0" width="519.61" height="52.4"/>
+	<rect x="280.19" y="431" class="ribbonbehindcrest0" width="519.61" height="52.4"/>
 </g>
 <g id="Hexagon_Crest">
 	<rect id="Ribbon_in_front" x="282.19" y="433" width="515.61" height="48.4"/>
-	<polygon id="blue_shadow" class="st1" points="321.05,489.06 758.95,489.06 764.6,485.26 315.4,485.26 	"/>
+	<polygon id="blue_shadow" class="ribbonbehindcrest1" points="321.05,489.06 758.95,489.06 764.6,485.26 315.4,485.26 	"/>
 </g>
 <g id="psuedo_page">
-	<rect id="page_bounding_box__x28_for_SVG_x29_" class="st2" width="1080" height="1080"/>
+	<rect id="page_bounding_box__x28_for_SVG_x29_" class="ribbonbehindcrest2" width="1080" height="1080"/>
 </g>
 </svg>

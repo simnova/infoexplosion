@@ -3,11 +3,11 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:none;}
+	.scrollleft0{fill:#FFFFFF;}
+	.scrollleft1{fill:none;}
 </style>
 <g id="LEFT_Ornamental_Scroll">
-	<path id="LEFT_white_back-fill" class="st0" d="M230.58,642.84c0,0-2.03-0.37-3.33-1.11c-1.29-0.74-2.96-3.88-3.14-5.18
+	<path id="LEFT_white_back-fill" class="scrollleft0" d="M230.58,642.84c0,0-2.03-0.37-3.33-1.11c-1.29-0.74-2.96-3.88-3.14-5.18
 		c-0.18-1.29-1.66-6.29,2.03-12.57c3.7-6.29,10.72-11.65,18.31-10.54c7.58,1.11,15.72,3.33,20.71,9.25
 		c4.99,5.92,9.62,17.94,8.51,22.19s0.55,2.96,0.55,2.96s1.66,2.59,2.4,5.36c0.74,2.77,0.92,25.15,2.96,34.21
 		c2.03,9.06,6.1,13.68,8.32,14.42s6.29,1.66,6.84-0.37s0.74-4.81,0-5.73c0,0,0.12,1.39-0.18,1.76c-0.31,0.37-1.11,0.86-1.57,0.8
@@ -590,6 +590,6 @@
 	</g>
 </g>
 <g id="psuedo_page">
-	<rect id="page_bounding_box__x28_for_SVG_x29_" class="st1" width="1080" height="1080"/>
+	<rect id="page_bounding_box__x28_for_SVG_x29_" class="scrollleft1" width="1080" height="1080"/>
 </g>
 </svg>

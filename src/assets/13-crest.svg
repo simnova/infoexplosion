@@ -3,16 +3,16 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:none;}
+	.crest0{fill:#FFFFFF;}
+	.crest1{fill:none;}
 </style>
 <g id="Hexagon_Crest">
 	<path id="Hexagon_black_border" d="M540,730.7L305.18,595.12V289.33L540,153.75l234.82,135.57v305.79L540,730.7z M769.39,591.99
 		V292.46L540,160.02L310.61,292.46v299.52L540,724.43L769.39,591.99z"/>
-	<polygon id="Hexagon_white_fill" class="st0" points="769.39,591.99 769.39,292.46 540,160.02 310.61,292.46 310.61,591.99 
+	<polygon id="Hexagon_white_fill" class="crest0" points="769.39,591.99 769.39,292.46 540,160.02 310.61,292.46 310.61,591.99 
 		540,724.43 	"/>
 </g>
 <g id="psuedo_page">
-	<rect id="page_bounding_box__x28_for_SVG_x29_" class="st1" width="1080" height="1080"/>
+	<rect id="page_bounding_box__x28_for_SVG_x29_" class="crest1" width="1080" height="1080"/>
 </g>
 </svg>

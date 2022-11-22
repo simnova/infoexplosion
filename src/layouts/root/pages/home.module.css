@@ -1,0 +1,112 @@
+.whitePulse{
+    background: white;
+    border-radius: 50%;
+    filter: blur(48px);
+    
+    opacity: 40%;
+    animation: pulse 3.168s infinite;
+}
+
+
+@keyframes pulse { /* dots and dashes to sync with timing in comments */
+
+	0% { transform: scale(0.8); /* initial state */ }
+	12.51% { transform: scale(1.0); /* set 1st dash on */ }
+	16.68% { transform: scale(0.8); /* 1 space */ }
+	29.19% { transform: scale(1.0); /* set 2nd dash on */ }
+	41.70% { transform: scale(0.8); /* turn M off - 3 space */ }
+	45.87% { transform: scale(1.0); /* set 1st dot on */ }
+	50.04% { transform: scale(0.8); /* 1 space */ }
+	54.21% { transform: scale(1.0); /* set 2nd dot on */ }
+	66.72% { transform: scale(0.8); /* turn I off - 3 space */ }
+	70.89% { transform: scale(1.0); /* set dot on */ }
+	83.40% { transform: scale(0.8); /* turn E off - 3 space ease out */ }
+	100.0% { transform: scale(0.8); /* 7 word space minus 3 spaces from ease */ }
+
+}
+
+/* morse code dots and dashes */
+
+.morsecodee { 
+	position: 
+	absolute; 
+	z-index: 30; 
+	opacity: 25%; 
+	animation-name: morsecodeEani1;
+	animation-duration: 3.168s;
+	animation-iteration-count:infinite;
+}
+@keyframes morsecodeEani1 { 
+	0% {opacity: 25%;}
+	66.72% {opacity: 25%;}
+	70.89% {opacity: 100%;}
+	83.40% {opacity: 25%;}
+	100% {opacity: 25%;}
+}
+
+.morsecodei2 { 
+	position: 
+	absolute; 
+	z-index: 29; 
+	opacity: 25%; 
+	animation-name: morsecodeIani2;
+	animation-duration: 3.168s;
+	animation-iteration-count:infinite;
+}
+@keyframes morsecodeIani2 { 
+	0% {opacity: 25%;}
+	50.04% {opacity: 25%;}
+	54.21% {opacity: 100%;}
+	66.72% {opacity: 25%;}
+	100% {opacity: 25%;}
+}
+
+.morsecodei1 { 
+	position: 
+	absolute; 
+	z-index: 28; 
+	opacity: 25%; 
+	animation-name: morsecodeIani1;
+	animation-duration: 3.168s;
+	animation-iteration-count:infinite;
+}
+@keyframes morsecodeIani1 { 
+	0% {opacity: 25%;}
+	41.70% {opacity: 25%;}
+	45.87% {opacity: 100%;}
+	50.04% {opacity: 25%;}
+	100% {opacity: 25%;}
+}
+
+.morsecodem2 { 
+	position: 
+	absolute; 
+	z-index: 27; 
+	opacity: 25%; 
+	animation-name: morsecodeMani2;
+	animation-duration: 3.168s;
+	animation-iteration-count:infinite;
+}
+@keyframes morsecodeMani2 { 
+	0% {opacity: 25%;}
+	16.68% {opacity: 25%;}
+	29.19% {opacity: 100%;}
+	41.70% {opacity: 25%;}
+	100% {opacity: 25%;}
+}
+
+.morsecodem1 { 
+	position: 
+	absolute; 
+	z-index: 26; 
+	opacity: 25%; 
+	animation-name: morsecodeMani1;
+	animation-duration: 3.168s;
+	animation-iteration-count:infinite;
+}
+@keyframes morsecodeMani1 { 
+	0% {opacity: 25%;}
+	12.51% {opacity: 100%;}
+	16.68% {opacity: 25%;}
+	100% {opacity: 25%;}
+}

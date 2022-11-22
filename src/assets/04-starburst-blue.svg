@@ -3,8 +3,8 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#4073D9;stroke:url(#SVGID_1_);stroke-miterlimit:10;}
-	.st1{fill:none;}
+	.starburstblue0{fill:#4073D9;stroke:url(#SVGID_1_);stroke-miterlimit:10;}
+	.starburstblue1{fill:none;}
 </style>
 <g id="blue_starburst">
 	
@@ -12,7 +12,7 @@
 		<stop  offset="0.2" style="stop-color:#4073D9"/>
 		<stop  offset="1" style="stop-color:#B3C8F1"/>
 	</radialGradient>
-	<polygon class="st0" points="540,22.47 540.97,503.05 567.09,23.18 542.9,503.15 594.1,25.3 544.83,503.35 620.96,28.84 
+	<polygon class="starburstblue0" points="540,22.47 540.97,503.05 567.09,23.18 542.9,503.15 594.1,25.3 544.83,503.35 620.96,28.84 
 		546.74,503.65 647.6,33.78 548.63,504.05 673.95,40.1 550.5,504.56 699.93,47.8 552.34,505.15 725.47,56.84 554.15,505.85 
 		750.5,67.21 555.91,506.63 774.95,78.88 557.64,507.51 798.77,91.8 559.31,508.48 821.87,105.96 560.94,509.53 844.2,121.31 
 		562.5,510.67 865.69,137.8 564.01,511.89 886.3,155.4 565.45,513.19 905.95,174.05 566.81,514.55 924.6,193.7 568.11,515.99 
@@ -41,6 +41,6 @@
 		531.37,504.05 432.4,33.78 533.26,503.65 459.04,28.84 535.17,503.35 485.9,25.3 537.1,503.15 512.91,23.18 539.03,503.05 	"/>
 </g>
 <g id="psuedo_page">
-	<rect id="page_bounding_box__x28_for_SVG_x29_" class="st1" width="1080" height="1080"/>
+	<rect id="page_bounding_box__x28_for_SVG_x29_" class="starburstblue1" width="1080" height="1080"/>
 </g>
 </svg>
