@@ -147,7 +147,7 @@ export const Home: React.FC<any> = (_props) => {
 
             
             <NavBar style={{position:'absolute'}} />
-            <div  style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',minWidth: `${targetWidth}px`,minHeight:`${targetWidth}px`,display:(vvalue === 0?'block':'none')}}>
+            <div  style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',minWidth: `${targetWidth}px`,minHeight:`${targetWidth}px`,display:(width === targetWidth?'block':'none')}}>
               <MuseumOfInformationExplosionText style={{position:'absolute', marginTop:"50px",zIndex:3  }} />
               
               <MieLogo style={{position:'absolute', marginTop:"50px" ,zIndex:3}} />
@@ -165,7 +165,7 @@ export const Home: React.FC<any> = (_props) => {
       <div>
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display:'none' }}>Hello</div>
         <div ref={parentRef} style={{ minHeight: '400px', maxHeight:'800px', paddingTop:'100px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow:'hidden' }}>
-          <div ref={ref}  style={{maxWidth: `${width}px`, margin: '0 auto', marginTop:'100px', position:'relative', visibility:`${vvalue === 0?'hidden':'visible'}` }}>
+          <div ref={ref}  style={{maxWidth: `${width}px`, margin: '0 auto', marginTop:'100px', position:'relative', visibility:`${width === targetWidth?'hidden':'visible'}` }}>
               <MuseumOfInformationExplosionText style={{position:'absolute',zIndex:3  }} />
               <MieLogo style={{position:'absolute' ,zIndex:3}} />
               <BarLeft style={{position:'absolute',zIndex:3 }} />
