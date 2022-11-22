@@ -21,6 +21,11 @@ import { ReactComponent as MorseCodeI1 } from '../../../assets/28-morse-code-i1.
 import { ReactComponent as MorseCodeI2 } from '../../../assets/29-morse-code-i2.svg';
 import { ReactComponent as MorseCodeE } from '../../../assets/30-morse-code-e.svg';
 
+import { ReactComponent as NavBar } from '../../../assets/nav/nav-00-bar.svg';
+import { ReactComponent as NavAbout } from '../../../assets/nav/nav-01-about.svg';
+import { ReactComponent as NavAttractions } from '../../../assets/nav/nav-02-attractions.svg';
+import { ReactComponent as NavGetInvolved } from '../../../assets/nav/nav-03-get-involved.svg';
+
 
 
 
@@ -37,6 +42,7 @@ import { ReactComponent as StarburstGold } from '../../../assets/00-starburst-go
 import { useScroll } from 'framer-motion';
 import { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
+import { Z_BINARY } from 'zlib';
 
 export const Home: React.FC<any> = (_props) => {
   const ref = useRef(null);
@@ -55,7 +61,7 @@ export const Home: React.FC<any> = (_props) => {
     offset: ['100px 100px', 'start 300px'],
   });
   console.log(parentRef.current);
-  const targetWidth = 100;
+  const targetWidth = vw > 1000 ? 300: (300 * (vw/1000));
   useEffect(() => {
     const unsubProgress = scrollYProgress.onChange((v) => {
         setvvalue(v);
@@ -80,14 +86,18 @@ export const Home: React.FC<any> = (_props) => {
   let backgroundLeftOffset =   ((parentWidth??0)/2) + ((childWidth??0)/2) ; // (width > (600) ? ((parentWidth??0/2) - (width/2)) : (parentWidth??0/2 - width)/2);
   let topOffset = (parentWidth??0) > (childWidth??0 )?  ((parentWidth??0)/2)-((childWidth??0)/2): 0;// (parentHeight??0)/2;
   return (
-    <div>
-      <div style={{ maxWidth: `${targetWidth}px`, backgroundColor: 'yellow', margin: '0 auto', display: (vvalue === 0?'block':'none'),  position:'sticky', top:'0px', zIndex:3 }}>
-            <Crest />
+    <div style={{margin:'0 auto',maxWidth:1000}}>
+      <div style={{  backgroundColor: 'yellow', margin: '0 auto', position:'sticky', top:'0px', zIndex:3 }}>
+            <NavAbout style={{position:'absolute',zIndex:3}} />
+            <NavAttractions style={{position:'absolute',zIndex:3}} />
+            <NavGetInvolved style={{position:'absolute',zIndex:3}} />
+            <NavBar style={{position:'absolute'}} />
+            <Crest style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',maxWidth: `${targetWidth}px`,display: (vvalue === 0?'block':'none')}} />
       </div>
       <div>
-        <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>Hello</div>
-        <div ref={parentRef} style={{ minHeight: '400px', maxHeight:'800px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow:'hidden' }}>
-          <div ref={ref}  style={{maxWidth: `${width}px`, margin: '0 auto', position:'relative' }}>
+        <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display:'none' }}>Hello</div>
+        <div ref={parentRef} style={{ minHeight: '400px', maxHeight:'800px', paddingTop:'100px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow:'hidden' }}>
+          <div ref={ref}  style={{maxWidth: `${width}px`, margin: '0 auto', marginTop:'100px', position:'relative', visibility:`${vvalue === 0?'hidden':'visible'}` }}>
               <MuseumOfInformationExplosionText style={{position:'absolute',zIndex:3  }} />
               <MieLogo style={{position:'absolute' ,zIndex:3}} />
               <BarLeft style={{position:'absolute',zIndex:3 }} />
@@ -119,7 +129,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
 
         </div>
-        Hello World! {scrollYProgress.get()} -width: {width}px
+        Hello World! {scrollYProgress.get()} -width: {width}px -vvalue: {vvalue}
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>Hello</div>
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>Hello</div>
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>Hello</div>
