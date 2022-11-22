@@ -89,6 +89,7 @@ export const Home: React.FC<any> = (_props) => {
   });
   console.log('parentRef:', parentRef.current);
   const targetWidth = vw > 1000 ? 300: (300 * (vw/1000));
+  const targetHeaderOffset = vw > 1000 ? 50: (50 * (vw/1000));
   useEffect(() => {
     const unsubProgress = scrollYProgress.onChange((v) => {
         setvvalue(v);
@@ -148,14 +149,14 @@ export const Home: React.FC<any> = (_props) => {
             
             <NavBar style={{position:'absolute'}} />
             <div  style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',minWidth: `${targetWidth}px`,minHeight:`${targetWidth}px`,display:(width === targetWidth?'block':'none')}}>
-              <MuseumOfInformationExplosionText style={{position:'absolute', marginTop:"50px",zIndex:3  }} />
+              <MuseumOfInformationExplosionText style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3  }} />
               
-              <MieLogo style={{position:'absolute', marginTop:"50px" ,zIndex:3}} />
-              <RibbonBehindCrest style={{position:'absolute', marginTop:"50px",zIndex:3}} />
-              <RightRibbonEnd style={{position:'absolute', marginTop:"50px",zIndex:3}} />
-              <LeftRibbonEnd style={{position:'absolute', marginTop:"50px",zIndex:3}} />
-              <RibbonFrontOfCrest style={{position:'absolute', marginTop:"50px",zIndex:3}} />
-              <LightningBoltsTop style={{position:'absolute', marginTop:"50px",zIndex:3}} />
+              <MieLogo style={{position:'absolute', marginTop:`${targetHeaderOffset}px` ,zIndex:3}} />
+              <RibbonBehindCrest style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3}} />
+              <RightRibbonEnd style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3}} />
+              <LeftRibbonEnd style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3}} />
+              <RibbonFrontOfCrest style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3}} />
+              <LightningBoltsTop style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3}} />
               <Crest style={{position:'absolute',zIndex:1}} />
             </div>
             
