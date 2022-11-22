@@ -25,6 +25,9 @@ import { ReactComponent as NavBar } from '../../../assets/nav/nav-00-bar.svg';
 import { ReactComponent as NavAbout } from '../../../assets/nav/nav-01-about.svg';
 import { ReactComponent as NavAttractions } from '../../../assets/nav/nav-02-attractions.svg';
 import { ReactComponent as NavGetInvolved } from '../../../assets/nav/nav-03-get-involved.svg';
+import { ReactComponent as NavNewsAndEvents } from '../../../assets/nav/nav-04-news-and-events.svg';
+import { ReactComponent as NavSupportTheMuseum } from '../../../assets/nav/nav-05-support-the-museum.svg';
+import { ReactComponent as NavVisit } from '../../../assets/nav/nav-99-visit.svg';
 
 
 
@@ -52,20 +55,20 @@ export const Home: React.FC<any> = (_props) => {
 
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   const [vvalue, setvvalue] = useState(100);
-  const maxWidth = Math.min(vw * 0.8, 1000);
+  const maxWidth = parentWidth??0; // Math.min(vw * 0.8, 1000);
   const [width, setWidth] = useState(maxWidth);
   //const [parentWidth, setParentWidth] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['100px 100px', 'start 300px'],
+    offset: ['end 100px', 'start 300px'],
   });
   console.log(parentRef.current);
   const targetWidth = vw > 1000 ? 300: (300 * (vw/1000));
   useEffect(() => {
     const unsubProgress = scrollYProgress.onChange((v) => {
         setvvalue(v);
-        console.log(v);
+        console.log('scrollPercent:',v);
       var newWidth = Math.max(maxWidth * v, targetWidth);
       setWidth(newWidth);
     });
@@ -91,6 +94,9 @@ export const Home: React.FC<any> = (_props) => {
             <NavAbout style={{position:'absolute',zIndex:3}} />
             <NavAttractions style={{position:'absolute',zIndex:3}} />
             <NavGetInvolved style={{position:'absolute',zIndex:3}} />
+            <NavNewsAndEvents style={{position:'absolute',zIndex:3}} />
+            <NavSupportTheMuseum style={{position:'absolute',zIndex:3}} />
+            
             <NavBar style={{position:'absolute'}} />
             <Crest style={{position:'absolute',left:'50%',transform:'translate(-50%,-28%)',maxWidth: `${targetWidth}px`,display: (vvalue === 0?'block':'none')}} />
       </div>
