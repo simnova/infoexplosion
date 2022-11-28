@@ -1,4 +1,5 @@
 import styles from './home.module.css'; 
+import { Helmet } from 'react-helmet';
 import { ReactComponent as Crest } from '../../../assets/13-crest.svg';
 import { ReactComponent as MuseumOfInformationExplosionText } from '../../../assets/25-museum-of-information-explosion-text.svg';
 import { ReactComponent as MieLogo } from '../../../assets/14-mie-logo.svg';
@@ -138,6 +139,10 @@ export const Home: React.FC<any> = (_props) => {
 
 
   return (
+    <>
+    <Helmet>
+        <title>Museum of Information Explosion</title>
+    </Helmet>
     <div style={{margin:'0 auto',maxWidth:1000}}>
       <div style={{  backgroundColor: 'yellow', margin: '0 auto', position:'sticky', top:'0px', zIndex:3 }}>
             <NavAbout style={{position:'absolute',zIndex:3,display:aboutInView?'none':'initial'}} />
@@ -350,5 +355,6 @@ export const Home: React.FC<any> = (_props) => {
         <div style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>Footer</div>
       </div>
     </div>
+    </>
   );
 };
