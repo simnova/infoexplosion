@@ -144,7 +144,9 @@ export const Home: React.FC<any> = (_props) => {
         <title>Museum of Information Explosion</title>
     </Helmet>
     <div style={{margin:'0 auto',maxWidth:1000}}>
-      <div style={{  backgroundColor: 'yellow', margin: '0 auto', position:'sticky', top:'0px', zIndex:3 }}>
+      <div style={{  backgroundColor: 'yellow', margin: '0 auto', position:'sticky', top:'0px', zIndex:3, }}>
+
+
             <NavAbout style={{position:'absolute',zIndex:3,display:aboutInView?'none':'initial'}} />
             <NavAboutHover style={{position:'absolute',zIndex:2,display:!aboutInView?'none':'initial'}} />
             <NavAttractions style={{position:'absolute',zIndex:3,display:attractionsInView?'none':'initial'}} />
@@ -169,7 +171,7 @@ export const Home: React.FC<any> = (_props) => {
               <LightningBoltsTop style={{position:'absolute', marginTop:`${targetHeaderOffset}px`,zIndex:3}} />
               <Crest style={{position:'absolute',zIndex:1}} />
             </div>
-            
+  
       </div>
       <div>
         <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display:'none' }}>Hello</div>
