@@ -47,7 +47,7 @@ import { ReactComponent as StarburstBlue } from '../../../assets/04-starburst-bl
 import { ReactComponent as StarburstGold } from '../../../assets/00-starburst-gold-on-center-no-bounding-box.svg';
 
 
-import { useScroll, useInView } from 'framer-motion';
+import { motion, useScroll, useInView } from 'framer-motion';
 import { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
 
@@ -131,6 +131,11 @@ export const Home: React.FC<any> = (_props) => {
     margin: `-50% 0px -50% 0px`
   })
 
+  const boxVariant = {
+    visible: { opacity: 1, scale: 2 },
+    hidden: { opacity: 0, scale: 0 },
+  }
+
 
   return (
     <div style={{margin:'0 auto',maxWidth:1000}}>
@@ -197,11 +202,151 @@ export const Home: React.FC<any> = (_props) => {
 
         </div>
         Hello World! {scrollYProgress.get()} -width: {width}px -vvalue: {vvalue}
-        <div ref={aboutRef} style={{ height: '500px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>About</div>
-        <div ref={attractionsRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>Attractions</div>
-        <div ref={getInvolvedRef} style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>Get Involved</div>
-        <div ref={newsAndEventsRef} style={{ height: '500px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>News & Events</div>
-        <div ref={supportTheMuseumRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>Support the Museum</div>
+
+
+        <div ref={attractionsRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>
+          <h1>The Museum</h1>
+          <p>
+            Our modern lives depend on effective
+            communication and information management
+            for work, school, and even entertainment. It
+            only takes one click to contact someone
+            across the country or across the world…
+            but it hasn't always been this way. Crucial
+            developments in technology paved the way
+            for where we are now. The Museum of
+            Information Explosion (MIE) brings this story
+            to life through installations, game-play, and
+            the lives of many notable inventors, taking
+            visitors on a journey from the introduction of
+            the telegraph, to what's coming next!
+          </p>
+        </div>
+
+
+
+        <div ref={aboutRef} style={{ height: '500px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>
+          
+          <h1>About</h1>
+          <motion.div
+            variants={boxVariant}
+            animate={{x:-100, opacity: 0 }}
+            whileInView={{x:0, opacity: 1 }}
+            viewport={{ once: false }}
+            className="md:absolute"
+            transition={{ ease: "easeOut", duration: 1 }}
+           >
+          <p>
+            The Museum of Information Explosion is a
+            communication technology museum located
+            in Huntsville, Alabama. It provides a
+            hands-on, immersive experience where
+            guests can explore, interact, and learn about
+            communication technologies throughout
+            history. Visitors will leave the museum with
+            more appreciation for the business leaders
+            and inventors alike that have paved the way
+            for the digital technologies we rely on today.
+          </p>
+        </motion.div>
+        
+
+        </div>
+        <div ref={attractionsRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>
+          <h1>Attractions</h1>
+          <motion.div
+            variants={boxVariant}
+            animate={{x:-100, opacity: 0 }}
+            whileInView={{x:0, opacity: 1 }}
+            viewport={{ once: false }}
+            className="md:absolute"
+            transition={{ ease: "easeOut", duration: 1 }}
+           >
+
+          <p>
+            Exhibitions designed to tell the stories of
+            communication technology that made it
+            possible for humans to connect on a much
+            larger scale. Within these exhibits, we hope to
+            give you a new perspective on how history
+            has shaped the way we share information.
+            Exhibits feature antiques, artifacts, digital
+            interactive “experiments”, and Augmented and
+            Virtual Reality (AR/VR) content to give visitors
+            an engaging, educational, and fun experience.
+          </p>
+          </motion.div>
+        </div>
+        <div ref={getInvolvedRef} style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>
+          <h1>Get Involved</h1>
+          <motion.div
+            variants={boxVariant}
+            animate={{x:-100, opacity: 0 }}
+            whileInView={{x:0, opacity: 1 }}
+            viewport={{ once: false }}
+            className="md:absolute"
+            transition={{ ease: "easeOut", duration: 1 }}
+           >
+
+          <p>
+            Several regional radio clubs now call the
+            Museum of Information Explosion (MIE)
+            home. Each club focuses on a different
+            aspect of computing or radio communication.
+            The MIE is excited to facilitate a workspace
+            for each member to be able to indulge in their
+            hobbies and passions! We highly value our
+            volunteers! We have numerous volunteer
+            opportunities for those that are interested in
+            becoming a part of our museum. Please fill
+            out the contact form below to get started.
+          </p>
+          </motion.div>
+          </div>
+        <div ref={newsAndEventsRef} style={{ height: '500px', backgroundColor: 'blue', padding: '10px', color: 'white' }}>
+          <h1>News & Events</h1>
+          <motion.div
+            variants={boxVariant}
+            animate={{x:-100, opacity: 0 }}
+            whileInView={{x:0, opacity: 1 }}
+            viewport={{ once: false }}
+            className="md:absolute"
+            transition={{ ease: "easeOut", duration: 1 }}
+           >
+
+          <p>
+            As we approach our grand opening, we are
+            working towards perfecting each exhibit to
+            share with our future guests. In the meantime,
+            our spaces are available for private events
+            and parties. Contact us below for more
+            information regarding rentals!
+          </p>
+          </motion.div>
+        </div>
+        <div ref={supportTheMuseumRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>
+          <h1>Support the Museum</h1>
+          <motion.div
+            variants={boxVariant}
+            animate={{x:-100, opacity: 0 }}
+            whileInView={{x:0, opacity: 1 }}
+            viewport={{ once: false }}
+            className="md:absolute"
+            transition={{ ease: "easeOut", duration: 1 }}
+           >
+
+          <p>
+            The Museum of Information Explosion is a
+            501(c)(3) and all donations are tax-deductible.
+            We would love for you to become a part of
+            our mission to hold a meaningful space for
+            visitors of all ages to learn and immerse
+            themselves in communication technology.
+            Return to this page in the coming weeks to
+            learn more ways you can get involved.
+          </p>
+          </motion.div>
+          </div>
         <div style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>Footer</div>
       </div>
     </div>
