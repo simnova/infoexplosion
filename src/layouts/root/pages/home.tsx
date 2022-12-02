@@ -48,6 +48,8 @@ import AboutBackground from '../../../assets/images/jez-timms-zBF7qkuexmg-unspla
 import GetInvolvedBackground from '../../../assets/images/papaioannou-kostas-tysecUm5HJA-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
 import NewsAndEventsBackground from '../../../assets/images/museums-victoria-QLezSKMJOnw-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
 import SupportTheMuseumBackground from '../../../assets/images/museums-victoria-TVe0IEdsVc8-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
+import { Heading, HeadingLevel } from '../../../components/atoms/heading';
+import { SubpageHeader } from '../../../components/atoms/subpage-header';
 
 
 export const Home: React.FC<any> = (_props) => {
@@ -216,7 +218,8 @@ export const Home: React.FC<any> = (_props) => {
                   position: 'absolute',
                   zIndex: 1,
                   opacity: `${vvalue}`,
-                  transform: `translateX(-${backgroundLeftOffset}px)`,
+                  transform: `translateX(-50%)`,
+                  left:'50%',
                   margin: '0 auto',
                   top: `-${topOffset}px`,
                   minWidth: `${parentWidth}px`,
@@ -240,7 +243,8 @@ export const Home: React.FC<any> = (_props) => {
                   position: 'absolute',
                   zIndex: 0,
                   opacity: `${vvalue}`,
-                  transform: `translateX(-${backgroundLeftOffset}px)`,
+                  transform: `translateX(-50%)`,
+                  left:'50%',
                   margin: '0 auto',
                   top: `-${topOffset}px`,
                   minWidth: `${parentWidth}px`,
@@ -250,7 +254,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           
           <div ref={attractionsRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'green', padding: '10px 20px', color: 'white' }}>
-            <h1 style={{textShadow: "black 0px 0px 2px", color:"white"}}>The Museum</h1>
+            <Heading level={HeadingLevel.H1}  style={{textShadow: "black 0px 0px 2px", color:"white"}}>The Museum</Heading>
             <p>
               Our modern lives depend on effective communication and information management for work, school, and even entertainment. It only takes one click to contact
               someone across the country or across the world… but it hasn't always been this way. Crucial developments in technology paved the way for where we are now. The
@@ -260,7 +264,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           <div ref={aboutRef} style={{position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
             <div style={{position:'relative', zIndex:1}}>
-              <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>About</h1>
+              <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>About</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                 The Museum of Information Explosion is a communication technology museum located in Huntsville, Alabama. It provides a hands-on, immersive experience where
                 guests can explore, interact, and learn about communication technologies throughout history. Visitors will leave the museum with more appreciation for the
@@ -279,7 +283,7 @@ export const Home: React.FC<any> = (_props) => {
             />
           </div>
           <div ref={attractionsRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'white', padding: '10px 20px', color: 'black' }}>
-            <h1 style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</h1>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
                   exhibits, we hope to give you a new perspective on how history has shaped the way we share information. Exhibits feature antiques, artifacts, digital
@@ -288,7 +292,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           <div ref={getInvolvedRef} style={{position:'relative', marginTop:'20px',minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
           <div style={{position:'relative', zIndex:1}}>
-            <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Get Involved</h1>
+            <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Get Involved</Heading>
             <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                 Several regional radio clubs now call the Museum of Information Explosion (MIE) home. Each club focuses on a different aspect of computing or radio
                 communication. The MIE is excited to facilitate a workspace for each member to be able to indulge in their hobbies and passions! We highly value our
@@ -309,7 +313,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           <div ref={newsAndEventsRef} style={{position:'relative', marginTop:'20px',minHeight: '500px',  padding:'10px 20px 50px 20px', color: 'white' }}>
               <div style={{position:'relative', zIndex:1}}>
-              <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>News & Events</h1>
+              <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>News & Events</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   As we approach our grand opening, we are working towards perfecting each exhibit to share with our future guests. In the meantime, our spaces are available
                   for private events and parties. Contact us below for more information regarding rentals!
@@ -331,7 +335,7 @@ export const Home: React.FC<any> = (_props) => {
 
  
               <div style={{position:'relative', zIndex:1}}>
-                <h1 style={{position:'relative', padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Support the Museum</h1>
+                <Heading level={HeadingLevel.H1} style={{position:'relative', padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Support the Museum</Heading>
                 <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                     The Museum of Information Explosion is a 501(c)(3) and all donations are tax-deductible. We would love for you to become a part of our mission to hold a
                     meaningful space for visitors of all ages to learn and immerse themselves in communication technology. Return to this page in the coming weeks to learn more
@@ -349,7 +353,7 @@ export const Home: React.FC<any> = (_props) => {
                 style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center"}}
               />
           </div>
-          <div style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>Footer</div>
+          
         </div>
       </div>
     </>
