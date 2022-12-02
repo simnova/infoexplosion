@@ -77,7 +77,7 @@ export const Home: React.FC<any> = (_props) => {
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
   const [vvalue, setvvalue] = useState(100);
-  const [attractionsProgressPercent, setAttractionsProgressPercent] = useState(0);
+  const [attractionsProgressPercent, setAttractionsProgressPercent] = useState(1);
   if (!parentRef || !parentRef.current) {
    // console.log('parentRef is null');
   } else {
@@ -275,7 +275,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           
           
-          <motion.div ref={museumRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'green', padding: '10px 20px', color: 'white' }}>
+          <motion.div ref={museumRef} style={{minHeight: '500px', backgroundColor: "rgb(179, 200, 241)", padding: '10px 20px 50px 20px', color: 'white' }}>
            
       
             <motion.div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -283,20 +283,18 @@ export const Home: React.FC<any> = (_props) => {
               <MuseumPlanLabels style={{position:"absolute", zIndex:1}} />
                 <img src={MuseumPlan} style={{position:"relative"}} alt="Museum Plan" />
               </motion.div>
+              
             </motion.div>
-     
-                  
-            
-            <div className={styles['card']}>
-              <div>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.5)", padding:'20px', color:'black'}}>
               <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>The Museum</Heading><br/>
               Our modern lives depend on effective communication and information management for work, school, and even entertainment. It only takes one click to contact
               someone across the country or across the world… but it hasn't always been this way. Crucial developments in technology paved the way for where we are now. The
               Museum of Information Explosion (MIE) brings this story to life through installations, game-play, and the lives of many notable inventors, taking visitors on a
               journey from the introduction of the telegraph, to what's coming next!
               </div>
+            </div>
 
-              </div>
           </motion.div>
           <div ref={aboutRef} style={{position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
             <div style={{position:'relative', zIndex:1}}>
