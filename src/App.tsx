@@ -1,7 +1,8 @@
+import './App.css';
 import { Root } from './layouts/root';
 import { Home } from './layouts/root/pages/home';
 import { Route, Routes } from 'react-router-dom';
-
+ 
 function App() {
   return (
     <Routes>

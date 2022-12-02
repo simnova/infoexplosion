@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+:root {
+  /* brand colors */
+  --color-brand-primary:#3C5959;
+  --color-brand-secondary:#400101;
+
+  /* neutral colors */
+  --color-background-default:#F9F7F0;
+  --color-background-1:#DEDBCE;
+
+  --color-foreground-default:#5E5B51;
+  --color-foreground-1:#C4BEA9;
+  --color-foreground-2:#DED7BF;
+
+  /* secondary colors */
+  --color-action-foreground:#3F5F76;
+  --color-action-disabled:#95B1C6;
+  --color-action-hover:#324B5D;
+  --color-action-pressed:#243642;
+
+  --color-secondary-action-foreground:#F2EAD0;
+  --color-secondary-action-disabled:#FBF8EF;
+  --color-secondary-action-hover:#C0A235;
+  --color-secondary-action-pressed:#A0872C;
+
+  --color-red-foreground:#8C3503;
+  --color-yellow-foreground:#A66124;
+  --color-green-foreground:#3F8176;
+  --color-no-action-foreground:#B1B8AB;
+
+  /* fonts */
+  --font-stack-title:Quattrocento,serif;
+  --font-stack-subtitle:Merriweather,serif;
+  --font-stack-heading:Alegreya,serif;
+  --font-stack-subheading:Alegreya Sans,sans-serif;
+  --font-stack-body:Josefin Slab,Helvetica Neue,Helvetica,Arial,sans-serif;
+
+  --font-weight-regular:400;
+  --font-weight-semi-bold:500;
+  --font-weight-bold:700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body {
+  font-family: var(--font-stack-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-foreground-default);
+  font-size: 24px;
+  line-height: 30px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  /* fix for fonts */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body .semi-bold {
+  font-weight: var(--font-weight-semi-bold);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body .bold {
+  font-weight: var(--font-weight-bold);
 }

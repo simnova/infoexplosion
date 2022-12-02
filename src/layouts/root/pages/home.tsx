@@ -133,8 +133,8 @@ export const Home: React.FC<any> = (_props) => {
   })
 
   const boxVariant = {
-    visible: { opacity: 1, scale: 2 },
-    hidden: { opacity: 0, scale: 0 },
+    offscreen: { opacity: 0, x:-100%vw, rotate: -10},
+    onscreen: { opacity: 1, x:0, rotate:0,  transition: { duration: 1, ease: 'easeOut' } },
   }
 
 
@@ -237,13 +237,11 @@ export const Home: React.FC<any> = (_props) => {
           <h1>About</h1>
           <motion.div
             variants={boxVariant}
-            animate={{x:-100, opacity: 0 }}
-            whileInView={{x:0, opacity: 1 }}
+            initial={"offscreen"}
+            whileInView={"onscreen"}
             viewport={{ once: false }}
-            className="md:absolute"
-            transition={{ ease: "easeOut", duration: 1 }}
+            className={styles['card']} 
            >
-          <p>
             The Museum of Information Explosion is a
             communication technology museum located
             in Huntsville, Alabama. It provides a
@@ -254,23 +252,21 @@ export const Home: React.FC<any> = (_props) => {
             more appreciation for the business leaders
             and inventors alike that have paved the way
             for the digital technologies we rely on today.
-          </p>
         </motion.div>
         
 
         </div>
-        <div ref={attractionsRef} style={{ height: '500px', backgroundColor: 'green', padding: '10px', color: 'white' }}>
+        <div ref={attractionsRef} style={{ height: '500px', backgroundColor: 'white', padding: '10px', color: 'black' }}>
           <h1>Attractions</h1>
           <motion.div
             variants={boxVariant}
-            animate={{x:-100, opacity: 0 }}
-            whileInView={{x:0, opacity: 1 }}
+            initial={"offscreen"}
+            whileInView={"onscreen"}
             viewport={{ once: false }}
-            className="md:absolute"
-            transition={{ ease: "easeOut", duration: 1 }}
+            className={styles['card']} 
            >
 
-          <p>
+          <div>
             Exhibitions designed to tell the stories of
             communication technology that made it
             possible for humans to connect on a much
@@ -281,18 +277,17 @@ export const Home: React.FC<any> = (_props) => {
             interactive “experiments”, and Augmented and
             Virtual Reality (AR/VR) content to give visitors
             an engaging, educational, and fun experience.
-          </p>
+          </div>
           </motion.div>
         </div>
         <div ref={getInvolvedRef} style={{ height: '500px', backgroundColor: 'orange', padding: '10px', color: 'white' }}>
           <h1>Get Involved</h1>
           <motion.div
             variants={boxVariant}
-            animate={{x:-100, opacity: 0 }}
-            whileInView={{x:0, opacity: 1 }}
+            initial={"offscreen"}
+            whileInView={"onscreen"}
             viewport={{ once: false }}
-            className="md:absolute"
-            transition={{ ease: "easeOut", duration: 1 }}
+            className={styles['card']} 
            >
 
           <p>
@@ -314,11 +309,10 @@ export const Home: React.FC<any> = (_props) => {
           <h1>News & Events</h1>
           <motion.div
             variants={boxVariant}
-            animate={{x:-100, opacity: 0 }}
-            whileInView={{x:0, opacity: 1 }}
+            initial={"offscreen"}
+            whileInView={"onscreen"}
             viewport={{ once: false }}
-            className="md:absolute"
-            transition={{ ease: "easeOut", duration: 1 }}
+            className={styles['card']} 
            >
 
           <p>
@@ -335,11 +329,10 @@ export const Home: React.FC<any> = (_props) => {
           <h1>Support the Museum</h1>
           <motion.div
             variants={boxVariant}
-            animate={{x:-100, opacity: 0 }}
-            whileInView={{x:0, opacity: 1 }}
+            initial={"offscreen"}
+            whileInView={"onscreen"}
             viewport={{ once: false }}
-            className="md:absolute"
-            transition={{ ease: "easeOut", duration: 1 }}
+            className={styles['card']} 
            >
 
           <p>
