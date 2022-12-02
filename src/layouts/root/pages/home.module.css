@@ -111,11 +111,18 @@
 	100% {opacity: 25%;}
 }
 
+.headerFade {
+	background: rgb(255,255,255);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 31%, rgba(0,0,0,0) 100%);
+	min-height:150px;
+
+}
+
 
 .card{
-	max-width: max(60%,100px);
+	max-width: max(90%,100px);
 	padding:25px;
-	
+	margin-left: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -125,5 +132,23 @@
 	box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
 	  0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
 	  0 0 16px hsl(0deg 0% 0% / 0.075);
-	/*transform-origin: -50% -60%;*/
+	transform-origin: -50% -60%;
 }
+
+@media screen and (min-width: 800px) {
+	.card{
+		max-width: max(60%,100px);
+		padding:25px;
+		margin-left: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: white;
+		color:black;
+		border-radius: 20px;
+		box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+		  0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+		  0 0 16px hsl(0deg 0% 0% / 0.075);
+		transform-origin: -50% -60%;
+	}
+ }
