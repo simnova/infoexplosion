@@ -73,12 +73,12 @@ export const Home: React.FC<any> = (_props) => {
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
   const [vvalue, setvvalue] = useState(100);
   if (!parentRef || !parentRef.current) {
-    console.log('parentRef is null');
+   // console.log('parentRef is null');
   } else {
-    console.log('parentRef:', parentRef.current.getBoundingClientRect().width);
+  //  console.log('parentRef:', parentRef.current.getBoundingClientRect().width);
   }
   const maxWidth = parentWidth ?? Math.min(vw, 780);
-  console.log('maxWidth', maxWidth);
+//  console.log('maxWidth', maxWidth);
   const [width, setWidth] = useState(maxWidth);
   //const [parentWidth, setParentWidth] = useState(0);
 
@@ -86,13 +86,13 @@ export const Home: React.FC<any> = (_props) => {
     target: ref,
     offset: ['end 100px', 'start 300px'],
   });
-  console.log('parentRef:', parentRef.current);
+ // console.log('parentRef:', parentRef.current);
   const targetWidth = vw > 1000 ? 300 : 300 * (vw / 1000);
   const targetHeaderOffset = vw > 1000 ? 50 : 50 * (vw / 1000);
   useEffect(() => {
     const unsubProgress = scrollYProgress.onChange((v) => {
       setvvalue(v);
-      console.log('scrollPercent:', v);
+    //  console.log('scrollPercent:', v);
       var newWidth = Math.max(maxWidth * v, targetWidth);
       setWidth(newWidth);
     });
@@ -108,8 +108,8 @@ export const Home: React.FC<any> = (_props) => {
     }
   }, []);
   */
-  console.log('parentWidth', parentWidth);
-  console.log('width', childWidth);
+ // console.log('parentWidth', parentWidth);
+ // console.log('width', childWidth);
   let backgroundLeftOffset = (parentWidth ?? 0) / 2 + (childWidth ?? 0) / 2; // (width > (600) ? ((parentWidth??0/2) - (width/2)) : (parentWidth??0/2 - width)/2);
   let topOffset = (parentWidth ?? 0) > (childWidth ?? 0) ? (parentWidth ?? 0) / 2 - (childWidth ?? 0) / 2 : 0; // (parentHeight??0)/2;
 
@@ -210,7 +210,7 @@ export const Home: React.FC<any> = (_props) => {
               <ScrollLeft style={{ position: 'absolute', zIndex: 3, left: '0px', top: '0px' }} />
               <ScrollRight style={{ position: 'absolute', zIndex: 3, right: '0px', top: '0px' }} />
 
-              <Crest style={{ position: 'static', zIndex: 2, opacity: '100', visibility: `${vvalue === 0 ? 'hidden' : 'inherit'}` }} />
+              <Crest style={{ position: 'relative', zIndex: 2, opacity: '100', visibility: `${vvalue === 0 ? 'hidden' : 'inherit'}` }} />
               <StarburstBlue
                 style={{
                   position: 'absolute',
