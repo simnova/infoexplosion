@@ -258,8 +258,8 @@ export const Home: React.FC<any> = (_props) => {
               journey from the introduction of the telegraph, to what's coming next!
             </p>
           </div>
-          <div ref={aboutRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'blue', backgroundImage:`url(${AboutBackground})`,backgroundSize: 'cover', padding: '10px 20px', color: 'white' }}>
-            <h1 style={{textShadow: "black 0px 0px 2px", color:"white"}}>About</h1>
+          <div ref={aboutRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'blue', backgroundImage:`url(${AboutBackground})`,backgroundSize: 'cover', padding: '10px 20px 50px 20px', color: 'white' }}>
+            <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>About</h1>
             
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                 The Museum of Information Explosion is a communication technology museum located in Huntsville, Alabama. It provides a hands-on, immersive experience where
@@ -276,8 +276,8 @@ export const Home: React.FC<any> = (_props) => {
                   interactive “experiments”, and Augmented and Virtual Reality (AR/VR) content to give visitors an engaging, educational, and fun experience.
               </motion.div>
           </div>
-          <div ref={getInvolvedRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'orange', backgroundImage:`url(${GetInvolvedBackground})`,backgroundSize: 'cover', padding: '10px 20px', color: 'white' }}>
-            <h1 style={{textShadow: "black 0px 0px 2px", color:"white"}}>Get Involved</h1>
+          <div ref={getInvolvedRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'orange', backgroundImage:`url(${GetInvolvedBackground})`,backgroundSize: 'cover', padding: '10px 20px 50px 20px', color: 'white' }}>
+          <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Get Involved</h1>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   Several regional radio clubs now call the Museum of Information Explosion (MIE) home. Each club focuses on a different aspect of computing or radio
                   communication. The MIE is excited to facilitate a workspace for each member to be able to indulge in their hobbies and passions! We highly value our
@@ -285,15 +285,15 @@ export const Home: React.FC<any> = (_props) => {
                   to get started.
               </motion.div>
           </div>
-          <div ref={newsAndEventsRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'blue', backgroundImage:`url(${NewsAndEventsBackground})`,backgroundSize: 'cover',padding: '10px 20px', color: 'white' }}>
-            <h1 style={{textShadow: "black 0px 0px 5px", color:"white"}}>News & Events</h1>
+          <div ref={newsAndEventsRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'blue', backgroundImage:`url(${NewsAndEventsBackground})`,backgroundSize: 'cover', padding:'10px 20px 50px 20px', color: 'white' }}>
+            <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>News & Events</h1>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   As we approach our grand opening, we are working towards perfecting each exhibit to share with our future guests. In the meantime, our spaces are available
                   for private events and parties. Contact us below for more information regarding rentals!
               </motion.div>
           </div>
-          <div ref={supportTheMuseumRef} style={{marginTop:'20px', minHeight: '500px', backgroundColor: 'green',backgroundImage:`url(${SupportTheMuseumBackground})`,backgroundSize: 'cover', padding: '10px 20px', color: 'white' }}>
-            <h1 style={{textShadow: "black 0px 0px 5px", color:"white"}}>Support the Museum</h1>
+          <div ref={supportTheMuseumRef} style={{marginTop:'20px', minHeight: '500px', backgroundColor: 'green',backgroundImage:`url(${SupportTheMuseumBackground})`,backgroundSize: 'cover', padding: '10px 20px 50px 20px', color: 'white' }}>
+            <h1 style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Support the Museum</h1>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   The Museum of Information Explosion is a 501(c)(3) and all donations are tax-deductible. We would love for you to become a part of our mission to hold a
                   meaningful space for visitors of all ages to learn and immerse themselves in communication technology. Return to this page in the coming weeks to learn more
