@@ -40,6 +40,9 @@ import { ReactComponent as ScrollLeft } from '../../../assets/07-scroll-left.svg
 import { ReactComponent as StarburstBlue } from '../../../assets/04-starburst-blue.svg';
 import { ReactComponent as StarburstGold } from '../../../assets/00-starburst-gold-on-center-no-bounding-box.svg';
 
+import MuseumPlan from '../../../assets/b-02-museum-plan.png';
+import { ReactComponent as MuseumPlanLabels } from '../../../assets/b-01-museum-plan-labels.svg';
+
 import { motion, useScroll, useInView } from 'framer-motion';
 import { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
@@ -49,13 +52,13 @@ import GetInvolvedBackground from '../../../assets/images/papaioannou-kostas-tys
 import NewsAndEventsBackground from '../../../assets/images/museums-victoria-QLezSKMJOnw-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
 import SupportTheMuseumBackground from '../../../assets/images/museums-victoria-TVe0IEdsVc8-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
 import { Heading, HeadingLevel } from '../../../components/atoms/heading';
-import { SubpageHeader } from '../../../components/atoms/subpage-header';
+
 
 
 export const Home: React.FC<any> = (_props) => {
   const ref = useRef(null);
   //const parentRef = useRef(null);
-
+  const museumRef = useRef(null);
   const aboutRef = useRef(null);
   const attractionsRef = useRef(null);
   const getInvolvedRef = useRef(null);
@@ -74,6 +77,7 @@ export const Home: React.FC<any> = (_props) => {
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
   const [vvalue, setvvalue] = useState(100);
+  const [attractionsProgressPercent, setAttractionsProgressPercent] = useState(0);
   if (!parentRef || !parentRef.current) {
    // console.log('parentRef is null');
   } else {
@@ -84,15 +88,32 @@ export const Home: React.FC<any> = (_props) => {
   const [width, setWidth] = useState(maxWidth);
   //const [parentWidth, setParentWidth] = useState(0);
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress:logoProgress } = useScroll({
     target: ref,
     offset: ['end 100px', 'start 300px'],
   });
+
+  const { scrollYProgress:attractionsProgress} = useScroll({
+    target: museumRef,
+    offset: ['end 100px', 'start 300px'],
+  });
+  useEffect(() => {
+    const attractionsProgressChange = attractionsProgress.onChange((v) => {
+      console.log('attractionsProgressChange', v);
+      setAttractionsProgressPercent(v);
+    });
+    return () => {
+      attractionsProgressChange();
+    };
+  },[attractionsProgress]);
+  
+
+
  // console.log('parentRef:', parentRef.current);
   const targetWidth = vw > 1000 ? 300 : 300 * (vw / 1000);
   const targetHeaderOffset = vw > 1000 ? 50 : 50 * (vw / 1000);
   useEffect(() => {
-    const unsubProgress = scrollYProgress.onChange((v) => {
+    const unsubProgress = logoProgress.onChange((v) => {
       setvvalue(v);
     //  console.log('scrollPercent:', v);
       var newWidth = Math.max(maxWidth * v, targetWidth);
@@ -253,15 +274,30 @@ export const Home: React.FC<any> = (_props) => {
             </div>
           </div>
           
-          <div ref={attractionsRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'green', padding: '10px 20px', color: 'white' }}>
-            <Heading level={HeadingLevel.H1}  style={{textShadow: "black 0px 0px 2px", color:"white"}}>The Museum</Heading>
-            <p>
+          
+          <motion.div ref={museumRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'green', padding: '10px 20px', color: 'white' }}>
+           
+      
+            <motion.div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <motion.div style={{position:'relative',  maxWidth:`${Math.max(attractionsProgressPercent,.3)*100}%`}}>
+              <MuseumPlanLabels style={{position:"absolute", zIndex:1}} />
+                <img src={MuseumPlan} style={{position:"relative"}} alt="Museum Plan" />
+              </motion.div>
+            </motion.div>
+     
+                  
+            
+            <div className={styles['card']}>
+              <div>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>The Museum</Heading><br/>
               Our modern lives depend on effective communication and information management for work, school, and even entertainment. It only takes one click to contact
               someone across the country or across the world… but it hasn't always been this way. Crucial developments in technology paved the way for where we are now. The
               Museum of Information Explosion (MIE) brings this story to life through installations, game-play, and the lives of many notable inventors, taking visitors on a
               journey from the introduction of the telegraph, to what's coming next!
-            </p>
-          </div>
+              </div>
+
+              </div>
+          </motion.div>
           <div ref={aboutRef} style={{position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
             <div style={{position:'relative', zIndex:1}}>
               <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>About</Heading>
