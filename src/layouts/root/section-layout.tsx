@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { AiFillFacebook, AiFillTwitterSquare, AiFillLinkedin, AiOutlineMail, AiOutlinePhone, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiFillFacebook, AiFillTwitterSquare, AiFillLinkedin, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { FaFax } from 'react-icons/fa';
 import { Heading, HeadingLevel } from '../../components/atoms/heading';
 import { Container } from '../../components/atoms/container';
@@ -9,7 +8,7 @@ import { Container } from '../../components/atoms/container';
 export const SectionLayout: React.FC<any> = (props) => {
   return (
     <>
-        <Outlet />
+      <Outlet />
 
       <footer className="bg-zinc-800 text-white pb-4 flex-none">
         <Container>
@@ -68,7 +67,9 @@ export const SectionLayout: React.FC<any> = (props) => {
                   </p>
                 </div>
               </div>
+
             </div>
+            
           </div>
         </Container>
       </footer>

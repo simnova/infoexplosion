@@ -32,7 +32,6 @@ import { ReactComponent as NavNewsAndEvents } from '../../../assets/nav/nav-04-n
 import { ReactComponent as NavNewsAndEventsHover } from '../../../assets/nav/nav-04b-news-and-events-over.svg';
 import { ReactComponent as NavSupportTheMuseum } from '../../../assets/nav/nav-05-support-the-museum.svg';
 import { ReactComponent as NavSupportTheMuseumHover } from '../../../assets/nav/nav-05b-support-the-museum-over.svg';
-import { ReactComponent as NavVisit } from '../../../assets/nav/nav-99-visit.svg';
 
 import { ReactComponent as ScrollRight } from '../../../assets/06-scroll-right.svg';
 import { ReactComponent as ScrollLeft } from '../../../assets/07-scroll-left.svg';
@@ -48,7 +47,7 @@ import MuseumPlan from '../../../assets/b-02-museum-plan.png';
 import { ReactComponent as MuseumPlanLabels } from '../../../assets/b-01-museum-plan-labels.svg';
 
 import { motion, useScroll, useInView } from 'framer-motion';
-import { useRef, useEffect, useState, useLayoutEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
 
 import AboutBackground from '../../../assets/images/jez-timms-zBF7qkuexmg-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
@@ -75,11 +74,11 @@ export const Home: React.FC<any> = (props) => {
     refreshOptions: { trailing: true },
   };
 
-  const { width: parentWidth, height: parentHeight, ref: parentRef } = useResizeDetector(detectorOptions);
-  const { width: childWidth, height: childHeight } = useResizeDetector({ targetRef: ref });
+  const { width: parentWidth, ref: parentRef } = useResizeDetector(detectorOptions);
+  const { width: childWidth } = useResizeDetector({ targetRef: ref });
 
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  //const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
   const [vvalue, setvvalue] = useState(100);
   const [attractionsProgressPercent, setAttractionsProgressPercent] = useState(1);
   if (!parentRef || !parentRef.current) {
@@ -105,7 +104,7 @@ export const Home: React.FC<any> = (props) => {
   });
   useEffect(() => {
     const attractionsProgressChange = attractionsProgress.onChange((v) => {
-      console.log('attractionsProgressChange', v);
+     // console.log('attractionsProgressChange', v);
       setAttractionsProgressPercent(v);
     });
     return () => {
@@ -139,7 +138,7 @@ export const Home: React.FC<any> = (props) => {
   */
  // console.log('parentWidth', parentWidth);
  // console.log('width', childWidth);
-  let backgroundLeftOffset = (parentWidth ?? 0) / 2 + (childWidth ?? 0) / 2; // (width > (600) ? ((parentWidth??0/2) - (width/2)) : (parentWidth??0/2 - width)/2);
+//  let backgroundLeftOffset = (parentWidth ?? 0) / 2 + (childWidth ?? 0) / 2; // (width > (600) ? ((parentWidth??0/2) - (width/2)) : (parentWidth??0/2 - width)/2);
   let topOffset = (parentWidth ?? 0) > (childWidth ?? 0) ? (parentWidth ?? 0) / 2 - (childWidth ?? 0) / 2 : 0; // (parentHeight??0)/2;
 
   const aboutInView = useInView(aboutRef, {
