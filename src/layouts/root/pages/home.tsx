@@ -203,21 +203,72 @@ export const Home: React.FC<any> = (_props) => {
               <LeftRibbonEnd style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
               <RibbonFrontOfCrest style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
               <LightningBoltsTop style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
-              <Crest style={{ position: 'absolute', zIndex: 1 }} />
+              <Crest style={{ position: 'absolute', zIndex: 2 }} />
+              
             </div>
             </div>  
           </div>
           
         </div>
-        <div style={{backgroundColor: "rgb(179, 200, 241)", marginTop: "-105px", paddingTop: "105px"}}>
 
-        <div style={{ margin: '0 auto', maxWidth: 1000 }}>
+       <div style={{  backgroundColor: '#b3c8f1'}} >
+         
+        
+       
+        
+        <div style={{backgroundColor: '#b3c8f1', position:'relative',zIndex:'2' , marginTop: "-120px", paddingTop: "105px"}}>
+
+        <StarburstBlue
+                style={{
+                  position: 'fixed',
+                  display: width === targetWidth ? 'block' : 'none',
+                  zIndex: 3,
+                  transform: `translateX(-50%)`,
+                  left:'50%',
+                  margin: '0 auto',
+                  top: "calc(min(50vw,500px)*-1)",
+                  maxWidth: "min(100vw,1000px)",
+                }}
+              />
+        <div style={{margin:'0 auto', position:"fixed"}}> 
+        <div
+                className={[styles['whitePulse2']].join(' ')}
+                style={{
+                  position: 'fixed',
+                  zIndex: 2,
+                  display: width === targetWidth ? 'block' : 'none',
+                  margin: '0 auto',
+                  transform: `translateX(-50%)`,
+                  left: `50%`,
+                  top: "calc(min(50vw,500px)*-1)",
+                  minWidth: "min(100vw,1000px)",
+                  minHeight: "min(100vw,1000px)",
+                }}
+              />
+        </div>
+        
+        <StarburstGold
+                style={{
+                  position: 'fixed',
+                  display: width === targetWidth ? 'block' : 'none',
+                  zIndex: 1,
+                  transform: `translateX(-50%)`,
+                  opacity:'.5',
+                  left:'50%',
+                  margin: '0 auto',
+                  top: "calc(min(50vw,500px)*-1)",
+                  maxWidth: "min(100vw,1000px)",
+                }}
+              />
+        
+
+        <div style={{ margin: '0 auto', position:'relative', maxWidth: 1000, zIndex:4 }}>
 
         <div>
           <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display: 'none' }}>Hello</div>
           <div
             ref={parentRef}
-            style={{ marginTop:'-150px', minHeight: '400px',  paddingTop: '100px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow: 'hidden' }}
+            style={{ marginTop:'-150px', minHeight: '400px',  paddingTop: '100px',  padding: '10px', color: 'white', overflow: 'hidden' }}
           >
             <div
               ref={ref}
@@ -285,7 +336,7 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           
           
-          <motion.div ref={museumRef} style={{minHeight: '500px', backgroundColor: "rgb(179, 200, 241)", padding: '10px 20px 50px 20px', color: 'white' }}>
+          <motion.div ref={museumRef} style={{minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
            
       
             <motion.div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -296,7 +347,7 @@ export const Home: React.FC<any> = (_props) => {
               
             </motion.div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.5)", padding:'20px', color:'black'}}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
               <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>The Museum</Heading><br/>
               Our modern lives depend on effective communication and information management for work, school, and even entertainment. It only takes one click to contact
               someone across the country or across the world… but it hasn't always been this way. Crucial developments in technology paved the way for where we are now. The
@@ -306,7 +357,27 @@ export const Home: React.FC<any> = (_props) => {
             </div>
 
           </motion.div>
-          <div ref={aboutRef} style={{position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
+
+          <div ref={aboutRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>About</Heading><br/>
+              The Museum of Information Explosion is a communication technology museum located in Huntsville, Alabama. It provides a hands-on, immersive experience where
+                guests can explore, interact, and learn about communication technologies throughout history. Visitors will leave the museum with more appreciation for the
+                business leaders and inventors alike that have paved the way for the digital technologies we rely on today.
+            </div>
+          </div>      
+
+          <div ref={attractionsRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading><br/>
+              Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
+                  exhibits, we hope to give you a new perspective on how history has shaped the way we share information. Exhibits feature antiques, artifacts, digital
+                  interactive “experiments”, and Augmented and Virtual Reality (AR/VR) content to give visitors an engaging, educational, and fun experience.
+            </div>
+          </div>      
+
+
+          <div  style={{display:'none', position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
             <div style={{position:'relative', zIndex:1}}>
               <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>About</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
@@ -326,7 +397,7 @@ export const Home: React.FC<any> = (_props) => {
               style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0}}
             />
           </div>
-          <div ref={attractionsRef} style={{ marginTop:'20px',minHeight: '500px', backgroundColor: 'white', padding: '10px 20px', color: 'black' }}>
+          <div ref={attractionsRef} style={{ display:'none', marginTop:'20px',minHeight: '500px', backgroundColor: 'white', padding: '10px 20px', color: 'black' }}>
               <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
@@ -397,7 +468,7 @@ export const Home: React.FC<any> = (_props) => {
                 style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center"}}
               />
           </div>
-          
+          </div>
         </div>
       </div>
       </div>

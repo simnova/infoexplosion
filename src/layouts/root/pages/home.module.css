@@ -7,6 +7,14 @@
     animation: pulse 3.168s infinite;
 }
 
+.whitePulse2{
+    background: white;
+    border-radius: 50%;
+    filter: blur(48px);
+    
+    opacity: 40%;
+}
+
 
 @keyframes pulse { /* dots and dashes to sync with timing in comments */
 
@@ -112,8 +120,8 @@
 }
 
 .headerFade {
-	background: rgb(179, 200, 241);
-	background: linear-gradient(180deg, rgba(179, 200, 241,1) 81%, rgba(0,0,0,0) 100%);
+/*	background: rgb(179, 200, 241);
+	background: linear-gradient(180deg, rgba(179, 200, 241,1) 81%, rgba(0,0,0,0) 100%); */
 	min-height:200px;
 
 }
