@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { AiFillFacebook, AiFillTwitterSquare, AiFillLinkedin, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { FaFax } from 'react-icons/fa';
 import { Heading, HeadingLevel } from '../../components/atoms/heading';
@@ -33,11 +34,11 @@ export const SectionLayout: React.FC<any> = (props) => {
                   </a>
                 </Heading>
               </div>
-              <Link to="/privacy-policy" className="text-white hover:text-zinc-300">
+              <Link to="/privacy-policy#" className="text-white hover:text-zinc-300">
                 Privacy Policy
               </Link>
               <span className="mx-2">|</span>
-              <Link to="/terms-of-use" className="text-white hover:text-zinc-300">
+              <Link to="/terms-of-use#" className="text-white hover:text-zinc-300">
                 Terms of Use
               </Link>
             </div>
@@ -69,7 +70,7 @@ export const SectionLayout: React.FC<any> = (props) => {
               </div>
 
             </div>
-            
+
           </div>
         </Container>
       </footer>
