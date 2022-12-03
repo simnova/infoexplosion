@@ -39,6 +39,10 @@ import { ReactComponent as ScrollLeft } from '../../../assets/07-scroll-left.svg
 import { ReactComponent as StarburstBlue } from '../../../assets/04-starburst-blue.svg';
 import { ReactComponent as StarburstGold } from '../../../assets/00-starburst-gold-on-center-no-bounding-box.svg';
 
+import { ReactComponent as IphoneComingSoon } from '../../../assets/c-02-iphone-coming-soon.svg';
+import IphoneWithapp from '../../../assets/c-01-iphone-with-app.png?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
+
+
 
 import { ReactComponent as NavStretch } from '../../../assets/nav/nav-99-stretch-kludge-for-left-and-right.svg';
 
@@ -173,6 +177,7 @@ export const Home: React.FC<any> = (props) => {
         <title>Museum of Information Explosion</title>
       </Helmet>
         <div  className={styles[headerClass]} style={{minHeight:'150px',  position: 'sticky', top: '0px', zIndex: 3, width:"100%" }}>
+
           <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(50vw - 500px)", left:0}}/>
           <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(50vw - 500px)", right:0}}/>
           
@@ -431,6 +436,26 @@ export const Home: React.FC<any> = (props) => {
                     ways you can get involved.
             </div>
           </div>  
+
+
+          <div  style={{marginTop:'20px', minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white', position:'relative' }}>
+
+ 
+              <div style={{position:'relative', zIndex:1}}>
+                <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>App Coming Soon</Heading><br/>
+              </div>
+              <IphoneComingSoon style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', zIndex:1}}/>
+              <img
+                src={IphoneWithapp.src}
+                srcSet={IphoneWithapp.srcSet}
+                width={IphoneWithapp.width}
+                height={IphoneWithapp.height}
+                sizes='(min-width: 1024px) 1024px, 100vw'
+                loading="lazy"
+                alt="iPhone with app"
+                style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "contain", objectPosition: "center"}}
+              />
+          </div>
 
 
           </div>
