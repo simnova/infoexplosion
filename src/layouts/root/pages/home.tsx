@@ -262,7 +262,7 @@ export const Home: React.FC<any> = (_props) => {
               />
         
 
-        <div style={{ margin: '0 auto', position:'relative', maxWidth: 1000, zIndex:4 }}>
+        <div style={{ margin: '0 auto', position:'relative', maxWidth: 1000, marginBottom:'50px', zIndex:4 }}>
 
         <div>
           <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display: 'none' }}>Hello</div>
@@ -397,7 +397,7 @@ export const Home: React.FC<any> = (_props) => {
               style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0}}
             />
           </div>
-          <div ref={attractionsRef} style={{ display:'none', marginTop:'20px',minHeight: '500px', backgroundColor: 'white', padding: '10px 20px', color: 'black' }}>
+          <div style={{ display:'none', marginTop:'20px',minHeight: '500px', backgroundColor: 'white', padding: '10px 20px', color: 'black' }}>
               <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
                   Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
