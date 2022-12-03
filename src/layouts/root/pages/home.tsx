@@ -104,7 +104,7 @@ export const Home: React.FC<any> = (props) => {
   });
   useEffect(() => {
     const attractionsProgressChange = attractionsProgress.onChange((v) => {
-     // console.log('attractionsProgressChange', v);
+      console.log('attractionsProgressChange', v);
       setAttractionsProgressPercent(v);
     });
     return () => {
@@ -120,7 +120,7 @@ export const Home: React.FC<any> = (props) => {
   useEffect(() => {
     const unsubProgress = logoProgress.onChange((v) => {
       setvvalue(v);
-    //  console.log('scrollPercent:', v);
+      console.log('scrollPercent:', v);
       var newWidth = Math.max(maxWidth * v, targetWidth);
       setWidth(newWidth);
     });
