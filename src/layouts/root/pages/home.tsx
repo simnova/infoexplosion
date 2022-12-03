@@ -75,7 +75,7 @@ export const Home: React.FC<any> = (props) => {
 
   const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   //const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-  const [vvalue, setvvalue] = useState(100);
+  const [vvalue, setvvalue] = useState(1);
   const [attractionsProgressPercent, setAttractionsProgressPercent] = useState(1);
   if (!parentRef || !parentRef.current) {
    // console.log('parentRef is null');
@@ -89,8 +89,8 @@ export const Home: React.FC<any> = (props) => {
 
   
     const { scrollYProgress:logoProgress } = useScroll({
-      target: ref,
-      offset: ['end 100px', 'start 300px'],
+      target: parentRef,
+      offset: ['end start', 'start start'],
       //container: props.parentRef.current,
     });
   
@@ -120,7 +120,7 @@ export const Home: React.FC<any> = (props) => {
   const targetHeaderOffset = vw > 1000 ? 50 : 50 * (vw / 1000);
   useEffect(() => {
     const unsubProgress = logoProgress.onChange((v) => {
-      setvvalue(v);
+      setvvalue(v - ((1-v)*1));
   //    console.log('scrollPercent:', v);
       var newWidth = Math.max(maxWidth * v, targetWidth);
       setWidth(newWidth);
@@ -142,8 +142,12 @@ export const Home: React.FC<any> = (props) => {
 //  let backgroundLeftOffset = (parentWidth ?? 0) / 2 + (childWidth ?? 0) / 2; // (width > (600) ? ((parentWidth??0/2) - (width/2)) : (parentWidth??0/2 - width)/2);
   let topOffset = (parentWidth ?? 0) > (childWidth ?? 0) ? (parentWidth ?? 0) / 2 - (childWidth ?? 0) / 2 : 0; // (parentHeight??0)/2;
 
+  const refInView = useInView(ref, {
+    margin: `-250px 0px 0px 0px`,
+  });
+
   const aboutInView = useInView(aboutRef, {
-    margin: `-50% 0px -50% 0px`,
+    margin: `-200px 0px 0px 0px`,
   });
   const attractionsInView = useInView(attractionsRef, {
     margin: `-50% 0px -50% 0px`,
@@ -194,7 +198,7 @@ export const Home: React.FC<any> = (props) => {
                 transform: 'translate(-50%,-28%)',
                 minWidth: `${targetWidth}px`,
                 minHeight: `${targetWidth}px`,
-                display: width === targetWidth ? 'block' : 'none',
+                display: !refInView ? 'block' : 'none',
               }}
             >
               <MuseumOfInformationExplosionText style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
@@ -213,7 +217,7 @@ export const Home: React.FC<any> = (props) => {
           
         </div>
 
-       <div style={{  backgroundColor: '#b3c8f1'}} >
+       <div style={{  backgroundColor: '#b3c8f1', marginTop:'-50px'}} >
          
         
        
@@ -223,7 +227,7 @@ export const Home: React.FC<any> = (props) => {
         <StarburstBlue
                 style={{
                   position: 'fixed',
-                  display: width === targetWidth ? 'block' : 'none',
+                  display: !refInView ? 'block' : 'none',
                   zIndex: 3,
                   transform: `translateX(-50%)`,
                   left:'50%',
@@ -238,7 +242,7 @@ export const Home: React.FC<any> = (props) => {
                 style={{
                   position: 'fixed',
                   zIndex: 2,
-                  display: width === targetWidth ? 'block' : 'none',
+                  display: !refInView  ? 'block' : 'none',
                   margin: '0 auto',
                   transform: `translateX(-50%)`,
                   left: `50%`,
@@ -252,7 +256,7 @@ export const Home: React.FC<any> = (props) => {
         <StarburstGold
                 style={{
                   position: 'fixed',
-                  display: width === targetWidth ? 'block' : 'none',
+                  display: !refInView  ? 'block' : 'none',
                   zIndex: 1,
                   transform: `translateX(-50%)`,
                   opacity:'.5',
@@ -267,14 +271,17 @@ export const Home: React.FC<any> = (props) => {
         <div style={{ margin: '0 auto', position:'relative', maxWidth: 1000, marginBottom:'50px', zIndex:4 }}>
 
         <div>
-          <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display: 'none' }}>Hello</div>
+          
           <div
             ref={parentRef}
-            style={{ marginTop:'-150px', minHeight: '400px',  paddingTop: '100px',  padding: '10px', color: 'white', overflow: 'hidden' }}
+            style={{ minHeight: 'min(80vw,900px)', paddingTop: '50px',  marginBottom:'0 auto',  padding: '10px', color: 'black'  }}
           >
+            <div>
+
             <div
               ref={ref}
-              style={{ maxWidth: `${width}px`, margin: '0 auto', marginTop: '100px', position: 'relative', visibility: `${width === targetWidth ? 'hidden' : 'visible'}` }}
+              
+              style={{  maxWidth: `max(min(80vw,900px)*${vvalue??1},${targetWidth}px)`, margin: '0 auto',  position: 'relative', visibility: `${!refInView ? 'hidden' : 'visible'}` }}
             >
               <MuseumOfInformationExplosionText style={{ position: 'absolute', zIndex: 3 }} />
               <MieLogo style={{ position: 'absolute', zIndex: 3 }} />
@@ -305,8 +312,12 @@ export const Home: React.FC<any> = (props) => {
                   transform: `translateX(-50%)`,
                   left:'50%',
                   margin: '0 auto',
-                  top: `-${topOffset}px`,
-                  minWidth: `${parentWidth}px`,
+               //   top: `-${topOffset}px`,
+               //top: `-${width / 12}px`,
+               //   width: `max(min(80vw,900px)*${vvalue},${targetWidth}px)`
+                //  minWidth: `${parentWidth}px`,
+                top: `calc(20vw / (-1 * ${vvalue}))`,
+                width: `100vw`
                 }}
               />
               <div
@@ -314,12 +325,18 @@ export const Home: React.FC<any> = (props) => {
                 style={{
                   position: 'absolute',
                   zIndex: 1,
-                  opacity: `${vvalue}`,
+                 //opacity: `.2`,
+                  transform: `translateX(-50%)`,
                   margin: '0 auto',
-                  left: `0px`,
-                  top: `-${width / 12}px`,
-                  minWidth: `${width}px`,
-                  minHeight: `${width}px`,
+                 // left: `0`,
+                  top: `calc(5vw / (-1 * ${vvalue}))`,
+                 // top: `-${width / 12}px`,
+               //   width: `max(min(80vw,900px)*${vvalue},${targetWidth}px)`,
+               //   height: `max(min(80vw,900px)*${vvalue},${targetWidth}px)`
+                //  minWidth: `${width}px`,
+                //  minHeight: `${width}px`,
+                width: `max(min(80vw,900px)*${vvalue??1},${targetWidth}px)`,
+                height: `max(min(80vw,900px)*${vvalue??1},${targetWidth}px)`,
                 }}
               />
               <StarburstGold
@@ -330,14 +347,21 @@ export const Home: React.FC<any> = (props) => {
                   transform: `translateX(-50%)`,
                   left:'50%',
                   margin: '0 auto',
-                  top: `-${topOffset}px`,
-                  minWidth: `${parentWidth}px`,
+               //   top: `-${width / 12}px`,
+               top: `calc(20vw / (-1 * ${vvalue}))`,
+                //  top: `calc((max(100vw,1000px) * ${vvalue - (1-vvalue)}) / -4)`,
+                  width: `100vw`,
+                //  width: `max(min(80vw,900px)*${vvalue},${targetWidth}px)`
+                 // minWidth: `${parentWidth}px`,
                 }}
               />
             </div>
+            {refInView ? 'true': 'false'}
+            </div>
+
           </div>
           
-          
+          {vvalue} -- {attractionsProgressPercent} - {refInView ? 'true': 'false'}
           <motion.div ref={museumRef} style={{minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
            
       
@@ -359,6 +383,7 @@ export const Home: React.FC<any> = (props) => {
             </div>
 
           </motion.div>
+          {refInView ? 'true': 'false'}
 
           <div ref={aboutRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
