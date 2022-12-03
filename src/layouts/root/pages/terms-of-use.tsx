@@ -7,7 +7,7 @@ export const TermsOfUse: React.FC<any> = (_props) => {
   return (
     <>
       <SubpageHeader />
-      <Container>
+      <Container className='pb-8'>
       <article className="mx-4 text-base">
         <Heading level={HeadingLevel.H2}>Terms of Service</Heading>
         <p className={styles['p']}>

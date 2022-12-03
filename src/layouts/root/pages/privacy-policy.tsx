@@ -7,7 +7,7 @@ export const PrivacyPolicy: React.FC<any> = (_props) => {
   return (
     <>
       <SubpageHeader />
-      <Container>
+      <Container className='pb-8'>
       <article className="mx-4 text-base">
         <Heading level={HeadingLevel.H2}>Privacy Policy</Heading>
         <p className={styles['p']}>

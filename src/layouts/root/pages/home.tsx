@@ -209,6 +209,8 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           
         </div>
+        <div style={{backgroundColor: "rgb(179, 200, 241)", marginTop: "-105px", paddingTop: "105px"}}>
+
         <div style={{ margin: '0 auto', maxWidth: 1000 }}>
 
         <div>
@@ -398,6 +400,8 @@ export const Home: React.FC<any> = (_props) => {
           
         </div>
       </div>
+      </div>
+
     </>
   );
 };
