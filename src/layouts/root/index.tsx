@@ -8,7 +8,7 @@ import { useRef } from "react";
 export const Root: React.FC<any> = (_props) => {
     const ref = useRef(null);
     return (<>
-      <div ref={ref} className="flex flex-col min-h-screen" style={{height:"100vh",width: "100vw",overflowY: "scroll",overflowX: "hidden"}}>
+      <div ref={ref} className="flex flex-col min-h-screen" >
   
         <Routes>
           <Route path="" element={<SectionLayout />}>

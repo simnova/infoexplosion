@@ -50,10 +50,6 @@ import { motion, useScroll, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
 
-import AboutBackground from '../../../assets/images/jez-timms-zBF7qkuexmg-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
-import GetInvolvedBackground from '../../../assets/images/papaioannou-kostas-tysecUm5HJA-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
-import NewsAndEventsBackground from '../../../assets/images/museums-victoria-QLezSKMJOnw-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
-import SupportTheMuseumBackground from '../../../assets/images/museums-victoria-TVe0IEdsVc8-unsplash.jpg?sizes[]=200,sizes[]=600,sizes[]=1000&format=webp&useResponsiveLoader=true';
 import { Heading, HeadingLevel } from '../../../components/atoms/heading';
 
 
@@ -91,26 +87,31 @@ export const Home: React.FC<any> = (props) => {
   const [width, setWidth] = useState(maxWidth);
   //const [parentWidth, setParentWidth] = useState(0);
 
-  const { scrollYProgress:logoProgress } = useScroll({
-    target: ref,
-    offset: ['end 100px', 'start 300px'],
-    container: props.parentRef
-  });
+  
+    const { scrollYProgress:logoProgress } = useScroll({
+      target: ref,
+      offset: ['end 100px', 'start 300px'],
+      //container: props.parentRef.current,
+    });
+  
+    const { scrollYProgress:attractionsProgress} = useScroll({
+      target: museumRef,
+      offset: ['end 100px', 'start 300px'],
+     // container: props.parentRef.current,
+    });
 
-  const { scrollYProgress:attractionsProgress} = useScroll({
-    target: museumRef,
-    offset: ['end 100px', 'start 300px'],
-    container: props.parentRef
-  });
+  
+
+  
   useEffect(() => {
     const attractionsProgressChange = attractionsProgress.onChange((v) => {
-      console.log('attractionsProgressChange', v);
+     // console.log('attractionsProgressChange', v);
       setAttractionsProgressPercent(v);
     });
     return () => {
       attractionsProgressChange();
     };
-  },[attractionsProgress]);
+  },[attractionsProgress, props.parentRef]);
   
 
 
@@ -120,14 +121,14 @@ export const Home: React.FC<any> = (props) => {
   useEffect(() => {
     const unsubProgress = logoProgress.onChange((v) => {
       setvvalue(v);
-      console.log('scrollPercent:', v);
+  //    console.log('scrollPercent:', v);
       var newWidth = Math.max(maxWidth * v, targetWidth);
       setWidth(newWidth);
     });
     return () => {
       unsubProgress();
     };
-  });
+  },[logoProgress, props.parentRef, maxWidth, targetWidth]);
   /*
   useLayoutEffect(() => {
 
@@ -405,94 +406,6 @@ export const Home: React.FC<any> = (props) => {
           </div>  
 
 
-          <div  style={{display:'none', position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
-            <div style={{position:'relative', zIndex:1}}>
-              <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>About</Heading>
-              <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
-                The Museum of Information Explosion is a communication technology museum located in Huntsville, Alabama. It provides a hands-on, immersive experience where
-                guests can explore, interact, and learn about communication technologies throughout history. Visitors will leave the museum with more appreciation for the
-                business leaders and inventors alike that have paved the way for the digital technologies we rely on today.
-              </motion.div>
-            </div>
-            <img
-              src={AboutBackground.src}
-              srcSet={AboutBackground.srcSet}
-              width={AboutBackground.width}
-              height={AboutBackground.height}
-              sizes='(min-width: 1024px) 1024px, 100vw'
-              loading="lazy"
-              alt="About Background"
-              style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0}}
-            />
-          </div>
-          <div style={{ display:'none', marginTop:'20px',minHeight: '500px', backgroundColor: 'white', padding: '10px 20px', color: 'black' }}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading>
-              <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
-                  Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
-                  exhibits, we hope to give you a new perspective on how history has shaped the way we share information. Exhibits feature antiques, artifacts, digital
-                  interactive “experiments”, and Augmented and Virtual Reality (AR/VR) content to give visitors an engaging, educational, and fun experience.
-              </motion.div>
-          </div>
-          <div  style={{display:'none',position:'relative', marginTop:'20px',minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
-          <div style={{position:'relative', zIndex:1}}>
-            <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Get Involved</Heading>
-            <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
-                
-            </motion.div>
-            </div>
-            <img
-              src={GetInvolvedBackground.src}
-              srcSet={GetInvolvedBackground.srcSet}
-              width={GetInvolvedBackground.width}
-              height={GetInvolvedBackground.height}
-              sizes='(min-width: 1024px) 1024px, 100vw'
-              loading="lazy"
-              alt="Get Involved"
-              style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0}}
-            />
-          </div>
-          <div  style={{display:'none',position:'relative', marginTop:'20px',minHeight: '500px',  padding:'10px 20px 50px 20px', color: 'white' }}>
-              <div style={{position:'relative', zIndex:1}}>
-              <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>News & Events</Heading>
-              <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
-                  As we approach our grand opening, we are working towards perfecting each exhibit to share with our future guests. In the meantime, our spaces are available
-                  for private events and parties. Contact us below for more information regarding rentals!
-              </motion.div>
-              </div>
-              <img
-                src={NewsAndEventsBackground.src}
-                srcSet={NewsAndEventsBackground.srcSet}
-                width={NewsAndEventsBackground.width}
-                height={NewsAndEventsBackground.height}
-                sizes='(min-width: 1024px) 1024px, 100vw'
-                loading="lazy"
-                alt="News and Events Background"
-                style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0}}
-              />
-
-          </div>
-          <div  style={{display:'none',marginTop:'20px', minHeight: '500px', backgroundColor: 'green', padding: '10px 20px 50px 20px', color: 'white', position:'relative' }}>
-
- 
-              <div style={{position:'relative', zIndex:1}}>
-                <Heading level={HeadingLevel.H1} style={{position:'relative', padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Support the Museum</Heading>
-                <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
-                    The Museum of Information Explosion is a 501(c)(3) and all donations are tax-deductible. We would love for you to become a part of our mission to hold a
-                    meaningful space for visitors of all ages to learn and immerse themselves in communication technology. Return to this page in the coming weeks to learn more
-                    ways you can get involved.
-                </motion.div>
-              </div>
-              <img
-                src={SupportTheMuseumBackground.src}
-                srcSet={SupportTheMuseumBackground.srcSet}
-                width={SupportTheMuseumBackground.width}
-                height={SupportTheMuseumBackground.height}
-                sizes='(min-width: 1024px) 1024px, 100vw'
-                loading="lazy"
-                alt="Support The Museum"
-                style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center"}}
-              />
-          </div>
           </div>
         </div>
       </div>
