@@ -378,6 +378,33 @@ export const Home: React.FC<any> = (props) => {
             </div>
           </div>      
 
+          <div ref={getInvolvedRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Get Involved</Heading><br/>
+              Several regional radio clubs now call the Museum of Information Explosion (MIE) home. Each club focuses on a different aspect of computing or radio
+                communication. The MIE is excited to facilitate a workspace for each member to be able to indulge in their hobbies and passions! We highly value our
+                volunteers! We have numerous volunteer opportunities for those that are interested in becoming a part of our museum. Please fill out the contact form below
+                to get started.
+            </div>
+          </div>  
+
+          <div ref={newsAndEventsRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>News &amp; Events</Heading><br/>
+              As we approach our grand opening, we are working towards perfecting each exhibit to share with our future guests. In the meantime, our spaces are available
+                  for private events and parties. Contact us below for more information regarding rentals!
+            </div>
+          </div>  
+
+          <div ref={supportTheMuseumRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Support the Museum</Heading><br/>
+              The Museum of Information Explosion is a 501(c)(3) and all donations are tax-deductible. We would love for you to become a part of our mission to hold a
+                    meaningful space for visitors of all ages to learn and immerse themselves in communication technology. Return to this page in the coming weeks to learn more
+                    ways you can get involved.
+            </div>
+          </div>  
+
 
           <div  style={{display:'none', position:'relative', marginTop:'20px',minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white' }}>
             <div style={{position:'relative', zIndex:1}}>
@@ -407,14 +434,11 @@ export const Home: React.FC<any> = (props) => {
                   interactive “experiments”, and Augmented and Virtual Reality (AR/VR) content to give visitors an engaging, educational, and fun experience.
               </motion.div>
           </div>
-          <div ref={getInvolvedRef} style={{position:'relative', marginTop:'20px',minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
+          <div  style={{display:'none',position:'relative', marginTop:'20px',minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
           <div style={{position:'relative', zIndex:1}}>
             <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>Get Involved</Heading>
             <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
-                Several regional radio clubs now call the Museum of Information Explosion (MIE) home. Each club focuses on a different aspect of computing or radio
-                communication. The MIE is excited to facilitate a workspace for each member to be able to indulge in their hobbies and passions! We highly value our
-                volunteers! We have numerous volunteer opportunities for those that are interested in becoming a part of our museum. Please fill out the contact form below
-                to get started.
+                
             </motion.div>
             </div>
             <img
@@ -428,7 +452,7 @@ export const Home: React.FC<any> = (props) => {
               style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0}}
             />
           </div>
-          <div ref={newsAndEventsRef} style={{position:'relative', marginTop:'20px',minHeight: '500px',  padding:'10px 20px 50px 20px', color: 'white' }}>
+          <div  style={{display:'none',position:'relative', marginTop:'20px',minHeight: '500px',  padding:'10px 20px 50px 20px', color: 'white' }}>
               <div style={{position:'relative', zIndex:1}}>
               <Heading level={HeadingLevel.H1}  style={{padding:'25px 20px', textShadow: "black 0px 0px 5px", color:"white",background: "linear-gradient(90deg, rgba(0,0,0,.5) 52%, rgba(0,0,0,.2) 100%)"}}>News & Events</Heading>
               <motion.div variants={boxVariant} initial={'offscreen'} whileInView={'onscreen'} viewport={{ once: false }} className={styles['card']}>
@@ -448,7 +472,7 @@ export const Home: React.FC<any> = (props) => {
               />
 
           </div>
-          <div ref={supportTheMuseumRef} style={{marginTop:'20px', minHeight: '500px', backgroundColor: 'green', padding: '10px 20px 50px 20px', color: 'white', position:'relative' }}>
+          <div  style={{display:'none',marginTop:'20px', minHeight: '500px', backgroundColor: 'green', padding: '10px 20px 50px 20px', color: 'white', position:'relative' }}>
 
  
               <div style={{position:'relative', zIndex:1}}>
