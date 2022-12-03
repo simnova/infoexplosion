@@ -1,3 +1,4 @@
+import { Container } from '../../../components/atoms/container';
 import { Heading, HeadingLevel } from '../../../components/atoms/heading';
 import { SubpageHeader } from '../../../components/atoms/subpage-header';
 import styles from './privacy-policy.module.css';
@@ -6,6 +7,7 @@ export const PrivacyPolicy: React.FC<any> = (_props) => {
   return (
     <>
       <SubpageHeader />
+      <Container>
       <article className="mx-4 text-base">
         <Heading level={HeadingLevel.H2}>Privacy Policy</Heading>
         <p className={styles['p']}>
@@ -279,6 +281,7 @@ export const PrivacyPolicy: React.FC<any> = (_props) => {
           privacy@infoexplosion.org{' '}
         </p>
       </article>
+      </Container>
     </>
   );
 };

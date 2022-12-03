@@ -1,3 +1,4 @@
+import { Container } from '../../../components/atoms/container';
 import { Heading, HeadingLevel } from '../../../components/atoms/heading';
 import { SubpageHeader } from '../../../components/atoms/subpage-header';
 import styles from './terms-of-use.module.css';
@@ -6,6 +7,7 @@ export const TermsOfUse: React.FC<any> = (_props) => {
   return (
     <>
       <SubpageHeader />
+      <Container>
       <article className="mx-4 text-base">
         <Heading level={HeadingLevel.H2}>Terms of Service</Heading>
         <p className={styles['p']}>
@@ -113,6 +115,7 @@ export const TermsOfUse: React.FC<any> = (_props) => {
           the courts in that State or location.{' '}
         </p>
       </article>
+      </Container>
     </>
   );
 };
