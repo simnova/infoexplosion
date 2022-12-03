@@ -3,14 +3,16 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/home";
 import { PrivacyPolicy } from "./pages/privacy-policy";
 import { TermsOfUse } from "./pages/terms-of-use";
+import { useRef } from "react";
 
 export const Root: React.FC<any> = (_props) => {
+    const ref = useRef(null);
     return (<>
-      <div className="flex flex-col min-h-screen">
+      <div ref={ref} className="flex flex-col min-h-screen" style={{height:"100vh",width: "100vw",overflowY: "scroll",overflowX: "hidden"}}>
   
         <Routes>
           <Route path="" element={<SectionLayout />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home parentRef={ref} />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-use" element={<TermsOfUse />} />
           </Route>

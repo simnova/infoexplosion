@@ -59,7 +59,7 @@ import { Heading, HeadingLevel } from '../../../components/atoms/heading';
 
 
 
-export const Home: React.FC<any> = (_props) => {
+export const Home: React.FC<any> = (props) => {
   const ref = useRef(null);
   //const parentRef = useRef(null);
   const museumRef = useRef(null);
@@ -95,11 +95,13 @@ export const Home: React.FC<any> = (_props) => {
   const { scrollYProgress:logoProgress } = useScroll({
     target: ref,
     offset: ['end 100px', 'start 300px'],
+    container: props.parentRef
   });
 
   const { scrollYProgress:attractionsProgress} = useScroll({
     target: museumRef,
     offset: ['end 100px', 'start 300px'],
+    container: props.parentRef
   });
   useEffect(() => {
     const attractionsProgressChange = attractionsProgress.onChange((v) => {

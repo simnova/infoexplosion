@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Root />}>
+      <Route path="/*" element={<Root />}>
         <Route path="*" element={<Home />}></Route>
       </Route>
     </Routes>
