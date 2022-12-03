@@ -9,9 +9,7 @@ import { Container } from '../../components/atoms/container';
 export const SectionLayout: React.FC<any> = (props) => {
   return (
     <>
-      <Container>
         <Outlet />
-      </Container>
 
       <footer className="bg-zinc-800 text-white mt-8 pb-4 flex-none">
         <Container>

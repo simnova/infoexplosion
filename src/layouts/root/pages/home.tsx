@@ -40,6 +40,10 @@ import { ReactComponent as ScrollLeft } from '../../../assets/07-scroll-left.svg
 import { ReactComponent as StarburstBlue } from '../../../assets/04-starburst-blue.svg';
 import { ReactComponent as StarburstGold } from '../../../assets/00-starburst-gold-on-center-no-bounding-box.svg';
 
+
+import { ReactComponent as NavStretch } from '../../../assets/nav/nav-99-stretch-kludge-for-left-and-right.svg';
+
+
 import MuseumPlan from '../../../assets/b-02-museum-plan.png';
 import { ReactComponent as MuseumPlanLabels } from '../../../assets/b-01-museum-plan-labels.svg';
 
@@ -162,9 +166,11 @@ export const Home: React.FC<any> = (_props) => {
       <Helmet>
         <title>Museum of Information Explosion</title>
       </Helmet>
-      <div style={{ margin: '0 auto', maxWidth: 1000 }}>
-        <div  className={styles[headerClass]} style={{minHeight:'150px', margin: '0 auto', position: 'sticky', top: '0px', zIndex: 3 }}>
-          <div style={{ position:'relative' }} >
+        <div  className={styles[headerClass]} style={{minHeight:'150px',  position: 'sticky', top: '0px', zIndex: 3, width:"100%" }}>
+          <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(100vw - 1000px)", left:0}}/>
+          <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(100vw - 1000px)", right:0}}/>
+          
+          <div style={{ position:'relative', maxWidth:'1000px', margin:'0 auto' }} >
             <div style={{ position: 'static' }}>
 
             <NavAbout style={{ position: 'absolute', zIndex: 3, display: aboutInView ? 'none' : 'initial' }} />
@@ -203,6 +209,8 @@ export const Home: React.FC<any> = (_props) => {
           </div>
           
         </div>
+        <div style={{ margin: '0 auto', maxWidth: 1000 }}>
+
         <div>
           <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display: 'none' }}>Hello</div>
           <div
