@@ -217,7 +217,7 @@ export const Home: React.FC<any> = (_props) => {
           <div style={{ height: '200px', backgroundColor: 'blue', padding: '10px', color: 'white', display: 'none' }}>Hello</div>
           <div
             ref={parentRef}
-            style={{ marginTop:'-150px', minHeight: '400px', maxHeight: '800px', paddingTop: '100px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow: 'hidden' }}
+            style={{ marginTop:'-150px', minHeight: '400px',  paddingTop: '100px', backgroundColor: '#b3c8f1', padding: '10px', color: 'white', overflow: 'hidden' }}
           >
             <div
               ref={ref}
