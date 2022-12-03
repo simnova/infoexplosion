@@ -90,7 +90,7 @@ export const Home: React.FC<any> = (props) => {
   
     const { scrollYProgress:logoProgress } = useScroll({
       target: parentRef,
-      offset: ['end start', 'start start'],
+      offset: ['500px start', 'start start'],
       //container: props.parentRef.current,
     });
   
@@ -173,8 +173,8 @@ export const Home: React.FC<any> = (props) => {
         <title>Museum of Information Explosion</title>
       </Helmet>
         <div  className={styles[headerClass]} style={{minHeight:'150px',  position: 'sticky', top: '0px', zIndex: 3, width:"100%" }}>
-          <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(100vw - 1000px)", left:0}}/>
-          <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(100vw - 1000px)", right:0}}/>
+          <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(50vw - 500px)", left:0}}/>
+          <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(50vw - 500px)", right:0}}/>
           
           <div style={{ position:'relative', maxWidth:'1000px', margin:'0 auto' }} >
             <div style={{ position: 'static' }}>
@@ -264,6 +264,7 @@ export const Home: React.FC<any> = (props) => {
                   margin: '0 auto',
                   top: "calc(min(50vw,500px)*-1)",
                   maxWidth: "min(100vw,1000px)",
+                  
                 }}
               />
         
@@ -281,7 +282,7 @@ export const Home: React.FC<any> = (props) => {
             <div
               ref={ref}
               
-              style={{  maxWidth: `max(min(80vw,900px)*${vvalue??1},${targetWidth}px)`, margin: '0 auto',  position: 'relative', visibility: `${!refInView ? 'hidden' : 'visible'}` }}
+              style={{   maxWidth: `max(min(80vw,900px)*${((vvalue??1 - (1-vvalue??1)))},${targetWidth}px)`, margin: '0 auto',  position: 'relative', visibility: `${!refInView ? 'hidden' : 'visible'}` }}
             >
               <MuseumOfInformationExplosionText style={{ position: 'absolute', zIndex: 3 }} />
               <MieLogo style={{ position: 'absolute', zIndex: 3 }} />
@@ -316,7 +317,9 @@ export const Home: React.FC<any> = (props) => {
                //top: `-${width / 12}px`,
                //   width: `max(min(80vw,900px)*${vvalue},${targetWidth}px)`
                 //  minWidth: `${parentWidth}px`,
-                top: `calc(20vw / (-1 * ${vvalue}))`,
+                //top: `calc(20vw / (-1 * ${vvalue}))`,
+                //top: `calc(max(20vw,1000px) / (-1 * ${vvalue}))`,
+                top: `calc(((100vw - (min(100vw,500px)/2)) * -.7) * ${1-((vvalue - ((1-vvalue)))*.5)})`,
                 width: `100vw`
                 }}
               />
@@ -340,6 +343,7 @@ export const Home: React.FC<any> = (props) => {
                 }}
               />
               <StarburstGold
+                preserveAspectRatio='none'
                 style={{
                   position: 'absolute',
                   zIndex: 0,
@@ -348,20 +352,19 @@ export const Home: React.FC<any> = (props) => {
                   left:'50%',
                   margin: '0 auto',
                //   top: `-${width / 12}px`,
-               top: `calc(20vw / (-1 * ${vvalue}))`,
+               top: `calc(((100vw - (min(100vw,500px)/2)) * -.7) * ${1-((vvalue - ((1-vvalue)))*.5)})`,
                 //  top: `calc((max(100vw,1000px) * ${vvalue - (1-vvalue)}) / -4)`,
                   width: `100vw`,
+                 // minHeight: `100vw`,
                 //  width: `max(min(80vw,900px)*${vvalue},${targetWidth}px)`
                  // minWidth: `${parentWidth}px`,
                 }}
               />
             </div>
-            {refInView ? 'true': 'false'}
             </div>
 
           </div>
           
-          {vvalue} -- {attractionsProgressPercent} - {refInView ? 'true': 'false'}
           <motion.div ref={museumRef} style={{minHeight: '500px',  padding: '10px 20px 50px 20px', color: 'white' }}>
            
       
@@ -383,7 +386,6 @@ export const Home: React.FC<any> = (props) => {
             </div>
 
           </motion.div>
-          {refInView ? 'true': 'false'}
 
           <div ref={aboutRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
