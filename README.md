@@ -1,4 +1,6 @@
-# Museum of Information Explosion Webste
+# Museum of Information Explosion Website
+
+https://infoexplosion.org
 
 Built with:
 
