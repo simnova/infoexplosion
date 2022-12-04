@@ -424,7 +424,7 @@ export const Home: React.FC<any> = (props) => {
             </motion.div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>The Museum</Heading><br/>
+              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>The Museum</Heading><br/>
               Our modern lives depend on effective communication and information management for work, school, and even entertainment. It only takes one click to contact
               someone across the country or across the world… but it hasn't always been this way. Crucial developments in technology paved the way for where we are now. The
               Museum of Information Explosion (MIE) brings this story to life through installations, game-play, and the lives of many notable inventors, taking visitors on a
@@ -436,7 +436,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={aboutRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1} id="aboutTheMuseum" style={{textShadow: "white 0px 0px 2px", color:"black"}}>About</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="aboutTheMuseum" style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>About</Heading><br/>
               The Museum of Information Explosion is a communication technology museum located in Huntsville, Alabama. It provides a hands-on, immersive experience where
                 guests can explore, interact, and learn about communication technologies throughout history. Visitors will leave the museum with more appreciation for the
                 business leaders and inventors alike that have paved the way for the digital technologies we rely on today.
@@ -445,7 +445,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={attractionsRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1} id="museumAttractions"   style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="museumAttractions"   style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>Attractions</Heading><br/>
               Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
                   exhibits, we hope to give you a new perspective on how history has shaped the way we share information. Exhibits feature antiques, artifacts, digital
                   interactive “experiments”, and Augmented and Virtual Reality (AR/VR) content to give visitors an engaging, educational, and fun experience.
@@ -454,7 +454,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={getInvolvedRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  id="getInvolved"  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Get Involved</Heading><br/>
+              <Heading level={HeadingLevel.H1}  id="getInvolved"  style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>Get Involved</Heading><br/>
               Several regional radio clubs now call the Museum of Information Explosion (MIE) home. Each club focuses on a different aspect of computing or radio
                 communication. The MIE is excited to facilitate a workspace for each member to be able to indulge in their hobbies and passions! We highly value our
                 volunteers! We have numerous volunteer opportunities for those that are interested in becoming a part of our museum. Please fill out the contact form below
@@ -464,7 +464,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={newsAndEventsRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1} id="newsAndEvents"  style={{textShadow: "white 0px 0px 2px", color:"black"}}>News &amp; Events</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="newsAndEvents"  style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>News &amp; Events</Heading><br/>
               As we approach our grand opening, we are working towards perfecting each exhibit to share with our future guests. In the meantime, our spaces are available
                   for private events and parties. Contact us below for more information regarding rentals!
             </div>
@@ -472,7 +472,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={supportTheMuseumRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1} id="supportTheInfoExplosionMuseum" style={{textShadow: "white 0px 0px 2px", color:"black"}}>Support the Museum</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="supportTheInfoExplosionMuseum" style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>Support the Museum</Heading><br/>
               The Museum of Information Explosion is a 501(c)(3) and all donations are tax-deductible. We would love for you to become a part of our mission to hold a
                     meaningful space for visitors of all ages to learn and immerse themselves in communication technology. Return to this page in the coming weeks to learn more
                     ways you can get involved.
@@ -484,7 +484,7 @@ export const Home: React.FC<any> = (props) => {
 
  
               <div style={{position:'relative', zIndex:1}}>
-                <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>App Coming Soon</Heading><br/>
+                <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>App Coming Soon</Heading><br/>
               </div>
               <IphoneComingSoon style={{position:'absolute', top:0, left:0, width:'100%', height:'100%', zIndex:1}}/>
               <img
@@ -502,7 +502,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1} id="supportTheInfoExplosionMuseum" style={{textShadow: "white 0px 0px 2px", color:"black"}}>Contact Us</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="supportTheInfoExplosionMuseum" style={{textShadow: "white 0px 0px 2px", color:"black", textAlign:'center', width:'100%'}}>Contact Us</Heading><br/>
               <FooterForm />
             </div>
           </div>  
