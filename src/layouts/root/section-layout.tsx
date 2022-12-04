@@ -27,7 +27,7 @@ export const SectionLayout: React.FC<any> = (props) => {
                   </a>
                 </Heading>
                 <Heading className="mr-2" level={HeadingLevel.H4}>
-                  <a href="https://twitter.com/infoexplosion" title="Twitter" target="_blank" rel="noreferrer">
+                  <a href="https://twitter.com/infoexmuseum" title="Twitter" target="_blank" rel="noreferrer">
                     <AiFillTwitterSquare />
                   </a>
                 </Heading>
