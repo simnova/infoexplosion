@@ -12,7 +12,7 @@ export const SectionLayout: React.FC<any> = (props) => {
     <>
       <Outlet />
 
-      <footer className="bg-zinc-800 text-white pb-4 flex-none">
+      <footer className="bg-zinc-800 text-white pb-4 flex-none" style={{zIndex:'4'}}>
 
 
         <Container>
