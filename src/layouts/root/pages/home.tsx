@@ -46,7 +46,7 @@ import IphoneWithapp from '../../../assets/c-01-iphone-with-app.png?sizes[]=200,
 
 
 import { ReactComponent as NavStretch } from '../../../assets/nav/nav-99-stretch-kludge-for-left-and-right.svg';
-
+import { ReactComponent as VectorClosed } from '../../../assets/vector-closed.svg';
 
 import MuseumPlan from '../../../assets/b-02-museum-plan.png';
 import { ReactComponent as MuseumPlanLabels } from '../../../assets/b-01-museum-plan-labels.svg';
@@ -56,6 +56,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useResizeDetector } from 'react-resize-detector';
 
 import { Heading, HeadingLevel } from '../../../components/atoms/heading';
+import { FooterForm } from '../../../components/atoms/footer-form';
 
 
 
@@ -136,7 +137,9 @@ export const Home: React.FC<any> = (props) => {
 
  // console.log('parentRef:', parentRef.current);
   const targetWidth = vw > 1000 ? 300 : 300 * (vw / 1000);
+  const targetWidth2 = vw > 1000 ? 800 : 800 * (vw / 1000);
   const targetHeaderOffset = vw > 1000 ? 50 : 50 * (vw / 1000);
+  const targetHeaderOffset2 = vw > 1000 ? 222 : 222 * (vw / 1000);
   useEffect(() => {
     const unsubProgress = logoProgress.onChange((v) => {
       setvvalue(v - ((1-v)*1));
@@ -218,6 +221,7 @@ export const Home: React.FC<any> = (props) => {
           
           <div style={{ position:'relative', maxWidth:'1000px', margin:'0 auto' }} >
             <div style={{ position: 'static' }}>
+            
 
             <NavAbout style={{ position: 'absolute', zIndex: 3, display: aboutInView ? 'none' : 'initial' }} />
             <NavAboutHover style={{ position: 'absolute', zIndex: 2, display: !aboutInView ? 'none' : 'initial' }} />
@@ -236,11 +240,13 @@ export const Home: React.FC<any> = (props) => {
                 position: 'absolute',
                 left: '50%',
                 transform: 'translate(-50%,-28%)',
-                minWidth: `${targetWidth}px`,
-                minHeight: `${targetWidth}px`,
+                minWidth: `${targetWidth2}px`,
+                minHeight: `${targetWidth2}px`,
                 display: !refInView ? 'block' : 'none',
               }}
             >
+              <VectorClosed style={{ position: 'absolute', marginTop: `${targetHeaderOffset2}px`, zIndex: 3 }} />
+              { /*}
               <MuseumOfInformationExplosionText style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
 
               <MieLogo style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
@@ -250,6 +256,7 @@ export const Home: React.FC<any> = (props) => {
               <RibbonFrontOfCrest style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
               <LightningBoltsTop style={{ position: 'absolute', marginTop: `${targetHeaderOffset}px`, zIndex: 3 }} />
               <Crest style={{ position: 'absolute', zIndex: 2 }} />
+              ( */})
               
             </div>
             </div>  
@@ -491,6 +498,16 @@ export const Home: React.FC<any> = (props) => {
                 style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "contain", objectPosition: "center"}}
               />
           </div>
+
+
+          <div style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
+              <Heading level={HeadingLevel.H1} id="supportTheInfoExplosionMuseum" style={{textShadow: "white 0px 0px 2px", color:"black"}}>Contact Us</Heading><br/>
+              <FooterForm />
+            </div>
+          </div>  
+
+
 
 
           </div>

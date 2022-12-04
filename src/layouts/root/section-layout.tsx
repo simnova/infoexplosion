@@ -6,12 +6,15 @@ import { FaFax } from 'react-icons/fa';
 import { Heading, HeadingLevel } from '../../components/atoms/heading';
 import { Container } from '../../components/atoms/container';
 
+
 export const SectionLayout: React.FC<any> = (props) => {
   return (
     <>
       <Outlet />
 
       <footer className="bg-zinc-800 text-white pb-4 flex-none">
+
+
         <Container>
           <div className="mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 text-sm">
             <div className="mt-4">
