@@ -1,5 +1,6 @@
 import styles from './home.module.css';
 import { Helmet } from 'react-helmet';
+import { HashLink as Link } from 'react-router-hash-link';
 import { ReactComponent as Crest } from '../../../assets/13-crest.svg';
 import { ReactComponent as MuseumOfInformationExplosionText } from '../../../assets/25-museum-of-information-explosion-text.svg';
 import { ReactComponent as MieLogo } from '../../../assets/14-mie-logo.svg';
@@ -59,6 +60,20 @@ import { Heading, HeadingLevel } from '../../../components/atoms/heading';
 
 
 export const Home: React.FC<any> = (props) => {
+
+  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+  const scrollWithOffset = (el:HTMLElement) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -200; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+    sleep(800).then(() => {
+      const yCoordinate2 = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: yCoordinate2 + yOffset }); 
+
+    });
+  }
+
   const ref = useRef(null);
   //const parentRef = useRef(null);
   const museumRef = useRef(null);
@@ -177,7 +192,27 @@ export const Home: React.FC<any> = (props) => {
         <title>Museum of Information Explosion</title>
       </Helmet>
         <div  className={styles[headerClass]} style={{minHeight:'150px',  position: 'sticky', top: '0px', zIndex: 3, width:"100%" }}>
+        <div style={{position:'absolute',backgroundColor:'green', height:'47px', margin:'0 auto', left:'max(calc((100vw - 1000px) / 2),0px)',width:'100%',maxWidth:'1000px', zIndex:'4',opacity:'0' }}>
+          <Link to="/#aboutTheMuseum"  className={styles.logoLink} scroll={scrollWithOffset}>
+          <div style={{display:'inline-block',backgroundColor:'orange',height:'47px', width:'12%'}}></div>
+          </Link>
+          <Link to="/#museumAttractions"  className={styles.logoLink} scroll={scrollWithOffset}>
+          <div style={{display:'inline-block',backgroundColor:'yellow',height:'47px', width:'15%'}}></div>
+          </Link>
+          <Link to="/#getInvolved"  className={styles.logoLink} scroll={scrollWithOffset}>
+          <div style={{display:'inline-block',backgroundColor:'orange',height:'47px', width:'15%'}}></div>
+          </Link>
+          <Link to="/#"  className={styles.logoLink} scroll={scrollWithOffset}>
+          <div style={{display:'inline-block',backgroundColor:'yellow',height:'47px', width:'16%'}}></div>
+          </Link>
+          <Link to="/#newsAndEvents"  className={styles.logoLink} scroll={scrollWithOffset}>
+          <div style={{display:'inline-block',backgroundColor:'orange',height:'47px', width:'18%'}}></div>
+          </Link>
+          <Link to="/#supportTheInfoExplosionMuseum"  className={styles.logoLink} scroll={scrollWithOffset}>
+          <div style={{display:'inline-block',backgroundColor:'yellow',height:'47px', width:'24%'}}></div>
+          </Link>
 
+        </div>
           <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(50vw - 500px)", left:0}}/>
           <NavStretch preserveAspectRatio='none' style={{height:"47px",position:"absolute", zIndex:1, width:"calc(50vw - 500px)", right:0}}/>
           
@@ -394,7 +429,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={aboutRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>About</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="aboutTheMuseum" style={{textShadow: "white 0px 0px 2px", color:"black"}}>About</Heading><br/>
               The Museum of Information Explosion is a communication technology museum located in Huntsville, Alabama. It provides a hands-on, immersive experience where
                 guests can explore, interact, and learn about communication technologies throughout history. Visitors will leave the museum with more appreciation for the
                 business leaders and inventors alike that have paved the way for the digital technologies we rely on today.
@@ -403,7 +438,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={attractionsRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="museumAttractions"   style={{textShadow: "white 0px 0px 2px", color:"black"}}>Attractions</Heading><br/>
               Exhibitions designed to tell the stories of communication technology that made it possible for humans to connect on a much larger scale. Within these
                   exhibits, we hope to give you a new perspective on how history has shaped the way we share information. Exhibits feature antiques, artifacts, digital
                   interactive “experiments”, and Augmented and Virtual Reality (AR/VR) content to give visitors an engaging, educational, and fun experience.
@@ -412,7 +447,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={getInvolvedRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Get Involved</Heading><br/>
+              <Heading level={HeadingLevel.H1}  id="getInvolved"  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Get Involved</Heading><br/>
               Several regional radio clubs now call the Museum of Information Explosion (MIE) home. Each club focuses on a different aspect of computing or radio
                 communication. The MIE is excited to facilitate a workspace for each member to be able to indulge in their hobbies and passions! We highly value our
                 volunteers! We have numerous volunteer opportunities for those that are interested in becoming a part of our museum. Please fill out the contact form below
@@ -422,7 +457,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={newsAndEventsRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>News &amp; Events</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="newsAndEvents"  style={{textShadow: "white 0px 0px 2px", color:"black"}}>News &amp; Events</Heading><br/>
               As we approach our grand opening, we are working towards perfecting each exhibit to share with our future guests. In the meantime, our spaces are available
                   for private events and parties. Contact us below for more information regarding rentals!
             </div>
@@ -430,7 +465,7 @@ export const Home: React.FC<any> = (props) => {
 
           <div ref={supportTheMuseumRef} style={{minHeight: '500px',  padding: '30vw 20px 100px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div style={{maxWidth:"500px", backgroundColor: "rgba(255, 255, 255,0.8)", padding:'20px', color:'black'}}>
-              <Heading level={HeadingLevel.H1}  style={{textShadow: "white 0px 0px 2px", color:"black"}}>Support the Museum</Heading><br/>
+              <Heading level={HeadingLevel.H1} id="supportTheInfoExplosionMuseum" style={{textShadow: "white 0px 0px 2px", color:"black"}}>Support the Museum</Heading><br/>
               The Museum of Information Explosion is a 501(c)(3) and all donations are tax-deductible. We would love for you to become a part of our mission to hold a
                     meaningful space for visitors of all ages to learn and immerse themselves in communication technology. Return to this page in the coming weeks to learn more
                     ways you can get involved.
@@ -438,7 +473,7 @@ export const Home: React.FC<any> = (props) => {
           </div>  
 
 
-          <div  style={{marginTop:'20px', minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white', position:'relative' }}>
+          <div  style={{marginTop:'20px', marginBottom:'100px', minHeight: '500px', padding: '10px 20px 50px 20px', color: 'white', position:'relative' }}>
 
  
               <div style={{position:'relative', zIndex:1}}>
